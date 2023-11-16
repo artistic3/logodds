@@ -81,7 +81,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
         $weights = getWeights($favOdds, 2, 10);
     }
-    $favOdds = array_slice($runners, 0, count($weights) + 2);
+    $favKeys = array_slice($runners, 0, count($weights) + 2);
+    $favOdds = [];
+    foreach($favKeys as $someKey){
+        if(isset($allOdds[$raceNumber][$someKey])){
+            $favOdds[$someKey] = $allOdds[$raceNumber][$someKey];
+        }
+    }
+    asort($favOdds);
     $weights = getWeights($favOdds, 2, 10);
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
