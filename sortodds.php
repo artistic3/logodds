@@ -115,7 +115,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     foreach($weights as $someKey => $someValue){
         $bet = 10 * $someValue;
-        $rate = round($bet / $totalBet, 4);
+        $rate = round($bet / $totalBets, 4);
         $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
     }
     if(
