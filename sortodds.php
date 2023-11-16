@@ -83,7 +83,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $favOdds = array_slice($runners, 0, count($weights) + 2);
     $weights = getWeights($favOdds, 2, 10);
-    
+    while(in_array(-1, $weights)){
+        $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
+        $weights = getWeights($favOdds, 2, 10);
+    }
     $totalBets = 0;
     $racetext .= "\t\t'WIN BETS' => [\n";
     foreach($weights as $someKey => $someValue){
