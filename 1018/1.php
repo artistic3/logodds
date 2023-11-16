@@ -14,7 +14,8 @@ return [
 			4 =>  40,
 			9 =>  40,
 			11 =>  40,
-		//favorite placen		],
+		//favorite place 
+		],
 		//Total bets:250',
 		//count:5',
 	],
@@ -134,7 +135,8 @@ return [
 			8 =>  30,
 			6 =>  30,
 			9 =>  30,
-		//favorite placen		],
+		//favorite place 
+		],
 		//Total bets:270',
 		//count:6',
 	],
