@@ -48,6 +48,7 @@ return [
 			8 =>  40,
 			12 =>  30,
 			5 =>  20,
+		//favorite place 
 		],
 		//Total bets:220',
 		//count:5',

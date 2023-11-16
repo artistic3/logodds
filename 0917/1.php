@@ -50,6 +50,7 @@ return [
 			3 =>  30,
 			5 =>  20,
 			11 =>  20,
+		//favorite place 
 		],
 		//Total bets:170',
 		//count:5',
