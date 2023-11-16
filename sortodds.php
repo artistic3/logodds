@@ -119,7 +119,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
               &&
        $weights[$first1] / $totalBets < 0.03
     ){
-        $racetext .= "\t\t//favorite placen";
+        $racetext .= "\t\t//favorite place \n";
     }
     $racetext .= "\t\t],\n";
     
