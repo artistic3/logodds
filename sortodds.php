@@ -114,6 +114,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $totalBets += $bet;
         $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",\n";
     }
+    if(
+        isset($weights[$first1])
+              &&
+       $weights[$first1] / $totalBets < 0.03
+    ){
+        $racetext .= "\t\t//favorite placen";
+    }
     $racetext .= "\t\t],\n";
     
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
