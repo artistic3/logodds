@@ -43,12 +43,6 @@ if(file_exists($outFile)){
     $oldData = include($outFile);
 }
 
-$reds = [1, 3, 5, 7, 9, 12, 14, 16, 18, 
-         19, 21, 23, 25, 27, 30, 32, 34, 36];
-
-$blacks = [2, 4, 6, 8, 2, 11, 13, 15, 17, 20,
-          22, 24, 26, 28, 29, 31, 33, 35];
-
 $totalRaces = count($allOdds);
 
 $outtext = "<?php\n\n";
@@ -66,25 +60,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
 
-    $values = array_values($tmpArray);
-
-    $sBlacks = array_values(array_intersect($runners, $blacks));
-    $sReds = array_values(array_intersect($runners, $reds));
-       
     $first1 = $runners[0];
 
-    if(in_array($first1, $blacks)){
-       $favorites = $sBlacks;
-       $others = $sReds;
-    }
-    else{
-       $favorites = $sReds;
-       $others =$sBlacks;
-    }
-
     //determine odds weights
-    //1. gets first five candidates depening on favorite
-    $favKeys = array_slice($runners, 0, count($runners) -1, true);
+    $favKeys = $runners;
     $favOdds = [];
     foreach($favKeys as $someKey){
         if(isset($allOdds[$raceNumber][$someKey])){
@@ -93,20 +72,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     asort($favOdds);
     $weights = getWeights($favOdds, 2, 10);
-    $showRace = in_array(-1, $weights);
    
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
-    $racetext .= "\t\t'Place' =>  '" . $first1 . "',\n";
     $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
     $weights = getWeights($favOdds, 2, 10);
      while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
         $weights = getWeights($favOdds, 2, 10);
     }
-    $weightValues = array_values($weights);
-    $criterion = count($weightValues) > 4 && $weightValues[0] != $weightValues[1];
-    $showRace = $showRace && $criterion;
+    
     $totalBets = 0;
     $racetext .= "\t\t'WIN BETS' => [\n";
     foreach($weights as $someKey => $someValue){
@@ -126,12 +101,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t//favorite place \n";
     }
     $racetext .= "\t\t],\n";
-    
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     $racetext .= "\t\t//count:" . count($weights) . "',\n";
-
     $racetext .= "\t],\n";
-    if($showRace) $outtext .= $racetext;
+    $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
