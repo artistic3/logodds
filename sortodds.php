@@ -117,7 +117,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(
         isset($weights[$first1])
               &&
-       $weights[$first1] / $totalBets < 0.03
+       $weights[$first1] / $totalBets > 0.04
     ){
         $racetext .= "\t\t//favorite place \n";
     }
