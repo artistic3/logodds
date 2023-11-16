@@ -155,6 +155,7 @@ return [
 			10 =>  20,//rate: 0.1333
 			5 =>  20,//rate: 0.1333
 			8 =>  20,//rate: 0.1333
+		//favorite place 
 		],
 		//Total bets:150',
 		//count:5',

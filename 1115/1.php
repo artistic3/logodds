@@ -13,6 +13,7 @@ return [
 			12 =>  30,//rate: 0.15
 			3 =>  30,//rate: 0.15
 			11 =>  30,//rate: 0.15
+		//favorite place 
 		],
 		//Total bets:200',
 		//count:5',
@@ -28,6 +29,7 @@ return [
 			2 =>  40,//rate: 0.2
 			1 =>  40,//rate: 0.2
 			6 =>  40,//rate: 0.2
+		//favorite place 
 		],
 		//Total bets:200',
 		//count:4',
