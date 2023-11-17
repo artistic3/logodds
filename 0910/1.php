@@ -17,6 +17,20 @@ return [
 		//Total bets:150',
 		//count:5',
 	],
+	'2' => [
+		/**
+		Race 2
+		*/
+		'All Runners   '  =>  '2, 5, 6, 4, 9, 8, 3, 7, 1',
+		'favorite' =>  '2',
+		'WIN BETS' => [
+			2 =>  80,//rate: 0.4211
+			5 =>  60,//rate: 0.3158
+			6 =>  50,//rate: 0.2632
+		],
+		//Total bets:190',
+		//count:3',
+	],
 	'3' => [
 		/**
 		Race 3
@@ -58,6 +72,21 @@ return [
 		//Total bets:210',
 		//count:5',
 	],
+	'6' => [
+		/**
+		Race 6
+		*/
+		'All Runners   '  =>  '4, 3, 7, 10, 8, 1, 5, 2, 9, 6',
+		'favorite' =>  '4',
+		'WIN BETS' => [
+			4 =>  50,//rate: 0.3125
+			3 =>  40,//rate: 0.25
+			7 =>  40,//rate: 0.25
+			10 =>  30,//rate: 0.1875
+		],
+		//Total bets:160',
+		//count:4',
+	],
 	'7' => [
 		/**
 		Race 7
@@ -70,6 +99,21 @@ return [
 		],
 		//Total bets:80',
 		//count:2',
+	],
+	'8' => [
+		/**
+		Race 8
+		*/
+		'All Runners   '  =>  '8, 5, 10, 1, 11, 4, 3, 2, 12, 9',
+		'favorite' =>  '8',
+		'WIN BETS' => [
+			8 =>  70,//rate: 0.3043
+			5 =>  60,//rate: 0.2609
+			10 =>  50,//rate: 0.2174
+			1 =>  50,//rate: 0.2174
+		],
+		//Total bets:230',
+		//count:4',
 	],
 	'9' => [
 		/**
@@ -84,5 +128,20 @@ return [
 		],
 		//Total bets:100',
 		//count:3',
+	],
+	'10' => [
+		/**
+		Race 10
+		*/
+		'All Runners   '  =>  '6, 1, 2, 10, 3, 7, 4, 8, 9, 5',
+		'favorite' =>  '6',
+		'WIN BETS' => [
+			6 =>  60,//rate: 0.3529
+			1 =>  40,//rate: 0.2353
+			2 =>  40,//rate: 0.2353
+			10 =>  30,//rate: 0.1765
+		],
+		//Total bets:170',
+		//count:4',
 	],
 ];

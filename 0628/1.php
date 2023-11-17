@@ -1,6 +1,21 @@
 <?php
 
 return [
+	'1' => [
+		/**
+		Race 1
+		*/
+		'All Runners   '  =>  '1, 2, 3, 5, 7, 6, 4',
+		'favorite' =>  '1',
+		'WIN BETS' => [
+			1 =>  20,//rate: 0.25
+			2 =>  20,//rate: 0.25
+			3 =>  20,//rate: 0.25
+			5 =>  20,//rate: 0.25
+		],
+		//Total bets:80',
+		//count:4',
+	],
 	'2' => [
 		/**
 		Race 2

@@ -31,6 +31,20 @@ return [
 		//Total bets:130',
 		//count:4',
 	],
+	'3' => [
+		/**
+		Race 3
+		*/
+		'All Runners   '  =>  '6, 1, 2, 3, 4, 7, 9, 8, 5',
+		'favorite' =>  '6',
+		'WIN BETS' => [
+			6 =>  40,//rate: 0.5
+			1 =>  20,//rate: 0.25
+			2 =>  20,//rate: 0.25
+		],
+		//Total bets:80',
+		//count:3',
+	],
 	'4' => [
 		/**
 		Race 4

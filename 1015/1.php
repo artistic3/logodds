@@ -1,6 +1,20 @@
 <?php
 
 return [
+	'1' => [
+		/**
+		Race 1
+		*/
+		'All Runners   '  =>  '3, 4, 7, 1, 6, 5, 8, 2',
+		'favorite' =>  '3',
+		'WIN BETS' => [
+			3 =>  70,//rate: 0.5
+			4 =>  40,//rate: 0.2857
+			7 =>  30,//rate: 0.2143
+		],
+		//Total bets:140',
+		//count:3',
+	],
 	'2' => [
 		/**
 		Race 2
@@ -80,6 +94,20 @@ return [
 		],
 		//Total bets:270',
 		//count:6',
+	],
+	'7' => [
+		/**
+		Race 7
+		*/
+		'All Runners   '  =>  '3, 1, 8, 5, 7, 9, 4, 2, 10, 6',
+		'favorite' =>  '3',
+		'WIN BETS' => [
+			3 =>  100,//rate: 0.5556
+			1 =>  50,//rate: 0.2778
+			8 =>  30,//rate: 0.1667
+		],
+		//Total bets:180',
+		//count:3',
 	],
 	'8' => [
 		/**
