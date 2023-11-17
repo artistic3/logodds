@@ -7,15 +7,14 @@ return [
 		*/
 		'All Runners   '  =>  '3, 5, 4, 9, 11, 10, 6, 8, 1, 2, 7, 12',
 		'favorite' =>  '3',
-		'WIN BETS' => [
-			3 =>  70,//rate: 0.28
-			5 =>  60,//rate: 0.24
-			4 =>  40,//rate: 0.16
-			9 =>  40,//rate: 0.16
-			11 =>  40,//rate: 0.16
+		'OUTSIDER BETS' => [
+			9 =>  10,//rate: 0.25
+			11 =>  10,//rate: 0.25
+			10 =>  10,//rate: 0.25
+			6 =>  10,//rate: 0.25
 		],
-		//Total bets:250',
-		//count:5',
+		//Total bets:40',
+		//count:4',
 	],
 	'2' => [
 		/**
@@ -23,15 +22,14 @@ return [
 		*/
 		'All Runners   '  =>  '3, 4, 12, 5, 2, 1, 10, 9, 7, 11, 6, 8',
 		'favorite' =>  '3',
-		'WIN BETS' => [
-			3 =>  70,//rate: 0.35
-			4 =>  40,//rate: 0.2
-			12 =>  40,//rate: 0.2
-			5 =>  30,//rate: 0.15
-			2 =>  20,//rate: 0.1
+		'OUTSIDER BETS' => [
+			5 =>  10,//rate: 0.25
+			2 =>  10,//rate: 0.25
+			1 =>  10,//rate: 0.25
+			10 =>  10,//rate: 0.25
 		],
-		//Total bets:200',
-		//count:5',
+		//Total bets:40',
+		//count:4',
 	],
 	'3' => [
 		/**
@@ -39,14 +37,13 @@ return [
 		*/
 		'All Runners   '  =>  '1, 8, 4, 2, 5, 9, 6, 3, 11, 10, 7, 12',
 		'favorite' =>  '1',
-		'WIN BETS' => [
-			1 =>  100,//rate: 0.5
-			8 =>  40,//rate: 0.2
-			4 =>  30,//rate: 0.15
-			2 =>  30,//rate: 0.15
-		//favorite place 
+		'OUTSIDER BETS' => [
+			4 =>  10,//rate: 0.25
+			2 =>  10,//rate: 0.25
+			5 =>  10,//rate: 0.25
+			9 =>  10,//rate: 0.25
 		],
-		//Total bets:200',
+		//Total bets:40',
 		//count:4',
 	],
 	'4' => [
@@ -55,15 +52,14 @@ return [
 		*/
 		'All Runners   '  =>  '2, 6, 3, 7, 11, 9, 4, 1, 5, 10, 8, 12',
 		'favorite' =>  '2',
-		'WIN BETS' => [
-			2 =>  80,//rate: 0.381
-			6 =>  40,//rate: 0.1905
-			3 =>  30,//rate: 0.1429
-			7 =>  30,//rate: 0.1429
-			11 =>  30,//rate: 0.1429
+		'OUTSIDER BETS' => [
+			7 =>  10,//rate: 0.25
+			11 =>  10,//rate: 0.25
+			9 =>  10,//rate: 0.25
+			4 =>  10,//rate: 0.25
 		],
-		//Total bets:210',
-		//count:5',
+		//Total bets:40',
+		//count:4',
 	],
 	'5' => [
 		/**
@@ -71,15 +67,14 @@ return [
 		*/
 		'All Runners   '  =>  '8, 4, 1, 11, 9, 2, 3, 5, 6, 12, 7',
 		'favorite' =>  '8',
-		'WIN BETS' => [
-			8 =>  80,//rate: 0.32
-			4 =>  60,//rate: 0.24
-			1 =>  50,//rate: 0.2
-			11 =>  30,//rate: 0.12
-			9 =>  30,//rate: 0.12
+		'OUTSIDER BETS' => [
+			11 =>  10,//rate: 0.25
+			9 =>  10,//rate: 0.25
+			2 =>  10,//rate: 0.25
+			3 =>  10,//rate: 0.25
 		],
-		//Total bets:250',
-		//count:5',
+		//Total bets:40',
+		//count:4',
 	],
 	'6' => [
 		/**
@@ -87,15 +82,14 @@ return [
 		*/
 		'All Runners   '  =>  '6, 3, 11, 2, 5, 9, 8, 1, 10, 12, 4, 7',
 		'favorite' =>  '6',
-		'WIN BETS' => [
-			6 =>  80,//rate: 0.3636
-			3 =>  40,//rate: 0.1818
-			11 =>  40,//rate: 0.1818
-			2 =>  30,//rate: 0.1364
-			5 =>  30,//rate: 0.1364
+		'OUTSIDER BETS' => [
+			2 =>  10,//rate: 0.25
+			5 =>  10,//rate: 0.25
+			9 =>  10,//rate: 0.25
+			8 =>  10,//rate: 0.25
 		],
-		//Total bets:220',
-		//count:5',
+		//Total bets:40',
+		//count:4',
 	],
 	'7' => [
 		/**
@@ -103,15 +97,14 @@ return [
 		*/
 		'All Runners   '  =>  '2, 4, 3, 12, 5, 7, 10, 11, 9, 1, 6, 8',
 		'favorite' =>  '2',
-		'WIN BETS' => [
-			2 =>  60,//rate: 0.3333
-			4 =>  50,//rate: 0.2778
-			3 =>  30,//rate: 0.1667
-			12 =>  20,//rate: 0.1111
-			5 =>  20,//rate: 0.1111
+		'OUTSIDER BETS' => [
+			12 =>  10,//rate: 0.25
+			5 =>  10,//rate: 0.25
+			7 =>  10,//rate: 0.25
+			10 =>  10,//rate: 0.25
 		],
-		//Total bets:180',
-		//count:5',
+		//Total bets:40',
+		//count:4',
 	],
 	'8' => [
 		/**
@@ -119,16 +112,14 @@ return [
 		*/
 		'All Runners   '  =>  '3, 6, 1, 7, 11, 4, 10, 2, 12, 8, 9, 5',
 		'favorite' =>  '3',
-		'WIN BETS' => [
-			3 =>  100,//rate: 0.4167
-			6 =>  50,//rate: 0.2083
-			1 =>  30,//rate: 0.125
-			7 =>  30,//rate: 0.125
-			11 =>  30,//rate: 0.125
-		//favorite place 
+		'OUTSIDER BETS' => [
+			7 =>  10,//rate: 0.25
+			11 =>  10,//rate: 0.25
+			4 =>  10,//rate: 0.25
+			10 =>  10,//rate: 0.25
 		],
-		//Total bets:240',
-		//count:5',
+		//Total bets:40',
+		//count:4',
 	],
 	'9' => [
 		/**
@@ -136,15 +127,13 @@ return [
 		*/
 		'All Runners   '  =>  '1, 10, 5, 8, 6, 9, 2, 3, 12, 7, 11, 4',
 		'favorite' =>  '1',
-		'WIN BETS' => [
-			1 =>  80,//rate: 0.2963
-			10 =>  50,//rate: 0.1852
-			5 =>  50,//rate: 0.1852
-			8 =>  30,//rate: 0.1111
-			6 =>  30,//rate: 0.1111
-			9 =>  30,//rate: 0.1111
+		'OUTSIDER BETS' => [
+			6 =>  10,//rate: 0.25
+			9 =>  10,//rate: 0.25
+			2 =>  10,//rate: 0.25
+			3 =>  10,//rate: 0.25
 		],
-		//Total bets:270',
-		//count:6',
+		//Total bets:40',
+		//count:4',
 	],
 ];

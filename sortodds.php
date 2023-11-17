@@ -82,29 +82,54 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $weights = getWeights($favOdds, 2, 10);
     }
     
+    // $totalBets = 0;
+    // $racetext .= "\t\t'WIN BETS' => [\n";
+    // foreach($weights as $someKey => $someValue){
+    //     $bet = 10 * $someValue;
+    //     $totalBets += $bet;
+    // }
+    // foreach($weights as $someKey => $someValue){
+    //     $bet = 10 * $someValue;
+    //     $rate = round($bet / $totalBets, 4);
+    //     $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
+    // }
+    // $racetext .= "\t\t],\n";
+    // $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
+    // $racetext .= "\t\t//count:" . count($weights) . "',\n";
+
+    $lastOutsider = array_key_last($weights);
+    $lastOutsiderPos = array_search($lastOutsider, $runners);
+    $outsiderOdds = array_slice($weights, -2, 2, true);
+    $outsiders = array_keys($outsiderOdds);
+    $outsiders[] = $runners[$lastOutsiderPos + 1];
+    $outsiders[] = $runners[$lastOutsiderPos + 2];
+    $outsiderOdds = [];
+    foreach($outsiders as $someKey){
+        if(isset($allOdds[$raceNumber][$someKey])){
+            $outsiderOdds[$someKey] = $allOdds[$raceNumber][$someKey];
+        }
+    }
+    $outsiderWeights = getWeights($outsiderOdds, 2, 10);
     $totalBets = 0;
-    $racetext .= "\t\t'WIN BETS' => [\n";
-    foreach($weights as $someKey => $someValue){
+    foreach($outsiderWeights as $someKey => $someValue){
         $bet = 10 * $someValue;
         $totalBets += $bet;
     }
-    foreach($weights as $someKey => $someValue){
+    $avg = $totalBets / count($outsiderWeights);
+    $outsiderWeightsValues = array_values($outsiderWeights);
+    $showRace =  $avg == 10 * $outsiderWeightsValues[0];
+    $racetext .= "\t\t'OUTSIDER BETS' => [\n";
+    foreach($outsiderWeights as $someKey => $someValue){
         $bet = 10 * $someValue;
         $rate = round($bet / $totalBets, 4);
         $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
     }
-    if(
-        isset($weights[$first1])
-              &&
-       $weights[$first1] / $totalBets >= 0.04
-    ){
-        $racetext .= "\t\t//favorite place \n";
-    }
     $racetext .= "\t\t],\n";
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
-    $racetext .= "\t\t//count:" . count($weights) . "',\n";
+    $racetext .= "\t\t//count:" . count($outsiderWeights) . "',\n";
+ 
     $racetext .= "\t],\n";
-    $outtext .= $racetext;
+    if($showRace) $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
