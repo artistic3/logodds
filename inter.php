@@ -38,21 +38,20 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $third = $runners[2];
     $fourth = $runners[3];
     $fifth = $runners[4];
-    if(isset($runners[5]))  $sixth = $runners[5];
    
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     
     $favInfo1 = explode(", ", $favData[$first1]['fav']);
-    $favInfo1 = array_slice($favInfo1, 0, 5);
+    $favInfo1 = array_slice($favInfo1, 0, 4);
     $favInfo2 = explode(", ", $favData[$second]['fav']);
-    $favInfo2 = array_slice($favInfo2, 0, 5);
+    $favInfo2 = array_slice($favInfo2, 0, 4);
     $favInfo3 = explode(", ", $favData[$third]['fav']);
-    $favInfo3 = array_slice($favInfo3, 0, 5);
+    $favInfo3 = array_slice($favInfo3, 0, 4);
     $favInfo4 = explode(", ", $favData[$fourth]['fav']);
-    $favInfo4 = array_slice($favInfo3, 0, 5);
+    $favInfo4 = array_slice($favInfo3, 0, 4);
     $favInfo5 = explode(", ", $favData[$fifth]['fav']);
-    $favInfo5 = array_slice($favInfo3, 0, 5);
+    $favInfo5 = array_slice($favInfo3, 0, 4);
     $inter = array_intersect($favInfo1, $favInfo2, $favInfo3, $favInfo4, $favInfo5);
     $showRace = !empty($inter);
     $racetext .= "\t\t'inter' => '" . implode(", ", $inter) . "',//count:" . count($inter) . "\n";
