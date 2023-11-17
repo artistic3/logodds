@@ -105,7 +105,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outsiderOdds = array_slice($weights, -2, 2, true);
     $outsiders = array_keys($outsiderOdds);
     $outsiders[] = $runners[$lastOutsiderPos + 1];
-    $outsiders[] = $runners[$lastOutsiderPos + 2];
+   if(isset($runners[$lastOutsiderPos + 2])) $outsiders[] = $runners[$lastOutsiderPos + 2];
     $outsiders[] = $first1;
     $outsiderOdds = [];
     foreach($outsiders as $someKey){
