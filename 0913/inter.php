@@ -1,24 +1,6 @@
 <?php
 
 return [
-	'1' => [
-		/**
-		Race 1
-		*/
-		'All Runners   '  =>  '5, 8, 2, 6, 1, 9, 4, 7',
-		'favorite' =>  '5',
-		'inter' => '2',//count:1
-		'sure place' => '5',//count:1
-	],
-	'2' => [
-		/**
-		Race 2
-		*/
-		'All Runners   '  =>  '2, 9, 3, 5, 8, 7, 6, 4, 10, 1',
-		'favorite' =>  '2',
-		'inter' => '2',//count:1
-		'sure place' => '2',//count:1
-	],
 	'3' => [
 		/**
 		Race 3
