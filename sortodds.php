@@ -84,20 +84,20 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $weights = getWeights($favOdds, 2, 10);
     }
     
-    // $totalBets = 0;
-    // $racetext .= "\t\t'WIN BETS' => [\n";
-    // foreach($weights as $someKey => $someValue){
-    //     $bet = 10 * $someValue;
-    //     $totalBets += $bet;
-    // }
-    // foreach($weights as $someKey => $someValue){
-    //     $bet = 10 * $someValue;
-    //     $rate = round($bet / $totalBets, 4);
-    //     $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
-    // }
-    // $racetext .= "\t\t],\n";
-    // $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
-    // $racetext .= "\t\t//count:" . count($weights) . "',\n";
+    $totalBets = 0;
+    $racetext .= "\t\t'WIN BETS' => [\n";
+    foreach($weights as $someKey => $someValue){
+        $bet = 10 * $someValue;
+        $totalBets += $bet;
+    }
+    foreach($weights as $someKey => $someValue){
+        $bet = 10 * $someValue;
+        $rate = round($bet / $totalBets, 4);
+        $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
+    }
+    $racetext .= "\t\t],\n";
+    $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
+    $racetext .= "\t\t//count:" . count($weights) . "',\n";
 
     $lastOutsider = array_key_last($weights);
     $lastOutsiderPos = array_search($lastOutsider, $runners);
