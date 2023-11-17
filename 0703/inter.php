@@ -19,13 +19,4 @@ return [
 		'inter' => '3, 1, 4, 6',//count:4
 		'sure place' => '3',//count:4
 	],
-	'6' => [
-		/**
-		Race 6
-		*/
-		'All Runners   '  =>  '4, 5, 3, 11, 6, 12, 1, 8, 7, 2, 9, 10',
-		'favorite' =>  '4',
-		'inter' => '2, 7, 8',//count:3
-		'sure place' => '4',//count:3
-	],
 ];
