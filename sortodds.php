@@ -150,8 +150,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
         $racetext .= "\t\t//count:" . count($outsiderWeights) . "',\n";
         $racetext .= "\t\t'lasts' => '" . implode(", ", $lasts) . "',\n";
-        $racetext .= "\t],\n";
     }
+    $racetext .= "\t],\n";
     if($showRace) $outtext .= $racetext;
 }
 
