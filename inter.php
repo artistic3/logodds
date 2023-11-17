@@ -43,20 +43,32 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     
     $favInfo1 = explode(", ", $favData[$first1]['fav']);
-    $favInfo1 = array_slice($favInfo1, 0, 5);
+    $favInfo11 = array_slice($favInfo1, 0, 5);
+    $favInfo12 = array_slice($favInfo1, 0, 4);
+
     $favInfo2 = explode(", ", $favData[$second]['fav']);
-    $favInfo2 = array_slice($favInfo2, 0, 5);
+    $favInfo21 = array_slice($favInfo2, 0, 5);
+    $favInfo22 = array_slice($favInfo2, 0, 4);
+ 
     $favInfo3 = explode(", ", $favData[$third]['fav']);
-    $favInfo3 = array_slice($favInfo3, 0, 5);
+    $favInfo31 = array_slice($favInfo3, 0, 5);
+    $favInfo32 = array_slice($favInfo3, 0, 4);
+ 
     $favInfo4 = explode(", ", $favData[$fourth]['fav']);
-    $favInfo4 = array_slice($favInfo3, 0, 5);
+    $favInfo41 = array_slice($favInfo4, 0, 5);
+    $favInfo42 = array_slice($favInfo4, 0, 4);
+
     $favInfo5 = explode(", ", $favData[$fifth]['fav']);
-    $favInfo5 = array_slice($favInfo3, 0, 5);
-    $inter = array_intersect($favInfo1, $favInfo2, $favInfo3, $favInfo4, $favInfo5);
-    $union1 = array_values(array_unique(array_merge($favInfo1, $favInfo2, $favInfo3, $favInfo4, $favInfo5)));
-    $union2 = array_values(array_unique(array_merge($favInfo1, $favInfo2, $favInfo3, $favInfo4)));
+    $favInfo51 = array_slice($favInfo5, 0, 5);
+    $favInfo52 = array_slice($favInfo5, 0, 4);
+
+    $union1 = array_values(array_unique(array_merge($favInfo11, $favInfo21, $favInfo31, $favInfo41, $favInfo51)));
+    $union2 = array_values(array_unique(array_merge($favInfo12, $favInfo22, $favInfo32, $favInfo42, $favInfo52)));
+
     $diff = array_diff($union1, $union2);
-    $racetext .= "\t\t'union' => '" . implode(", ", $union2) . "',//count:" . count($union2) . "\n";
+    $racetext .= "\t\t'union1' => '" . implode(", ", $union1) . "',//count:" . count($union1) . "\n";
+    $racetext .= "\t\t'union2' => '" . implode(", ", $union2) . "',//count:" . count($union2) . "\n";
+
     $racetext .= "\t\t'diff' => '" . implode(", ", $diff) . "',//count diff:" . count($diff) . "\n";
 
     $racetext .= "\t],\n";
