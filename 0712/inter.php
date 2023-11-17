@@ -8,7 +8,7 @@ return [
 		'All Runners   '  =>  '2, 5, 4, 6, 12, 3, 1, 7, 11, 8, 9',
 		'favorite' =>  '2',
 		'inter' => '2',//count:1
-		'union' => '2, 3, 4, 5, 6, 7, 8, 12',//count:8
+		'union' => '1, 2, 3, 4, 5, 6, 7, 8, 12',//count:9
 	],
 	'2' => [
 		/**
@@ -16,8 +16,8 @@ return [
 		*/
 		'All Runners   '  =>  '4, 2, 7, 6, 5, 8, 10, 1, 11, 9, 3, 12',
 		'favorite' =>  '4',
-		'inter' => '2',//count:1
-		'union' => '2, 3, 4, 5, 6, 7, 8, 12',//count:8
+		'inter' => '4, 2',//count:2
+		'union' => '1, 2, 3, 4, 5, 6, 7, 8, 12',//count:9
 	],
 	'3' => [
 		/**
@@ -34,7 +34,7 @@ return [
 		*/
 		'All Runners   '  =>  '3, 6, 4, 1, 12, 2, 8, 10, 11, 9',
 		'favorite' =>  '3',
-		'inter' => '4',//count:1
+		'inter' => '1, 4',//count:2
 		'union' => '1, 2, 3, 4, 6, 7, 8',//count:7
 	],
 	'5' => [
@@ -43,8 +43,8 @@ return [
 		*/
 		'All Runners   '  =>  '6, 12, 4, 9, 3, 7, 10, 8, 2, 11, 5, 1',
 		'favorite' =>  '6',
-		'inter' => '',//count:0
-		'union' => '1, 2, 4, 5, 6, 7, 8, 10, 11',//count:9
+		'inter' => '1',//count:1
+		'union' => '1, 2, 3, 4, 5, 6, 7, 8, 10, 11',//count:10
 	],
 	'6' => [
 		/**
@@ -52,7 +52,7 @@ return [
 		*/
 		'All Runners   '  =>  '4, 12, 8, 2, 3, 1, 7, 6, 9, 5, 10',
 		'favorite' =>  '4',
-		'inter' => '',//count:0
+		'inter' => '1',//count:1
 		'union' => '1, 2, 4, 5, 6, 7, 8, 9, 10, 11',//count:10
 	],
 	'7' => [
@@ -61,8 +61,8 @@ return [
 		*/
 		'All Runners   '  =>  '5, 7, 9, 4, 11, 3, 8, 10, 12, 2, 1, 6',
 		'favorite' =>  '5',
-		'inter' => '2',//count:1
-		'union' => '2, 3, 4, 5, 6, 7, 9',//count:7
+		'inter' => '7, 2',//count:2
+		'union' => '2, 3, 4, 5, 6, 7, 8, 9',//count:8
 	],
 	'8' => [
 		/**
@@ -70,7 +70,7 @@ return [
 		*/
 		'All Runners   '  =>  '2, 3, 11, 8, 4, 5, 9, 7, 1, 6, 10, 12',
 		'favorite' =>  '2',
-		'inter' => '',//count:0
+		'inter' => '3',//count:1
 		'union' => '1, 2, 3, 4, 5, 6, 8, 11, 12',//count:9
 	],
 	'9' => [
@@ -79,7 +79,7 @@ return [
 		*/
 		'All Runners   '  =>  '5, 8, 6, 2, 9, 11, 1, 7, 3, 10, 12, 4',
 		'favorite' =>  '5',
-		'inter' => '',//count:0
+		'inter' => '8',//count:1
 		'union' => '1, 2, 3, 4, 5, 6, 7, 8, 9',//count:9
 	],
 ];
