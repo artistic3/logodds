@@ -27,6 +27,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $allOdds[$raceNumber];
     asort($tmpArray);
     $runners = array_keys($tmpArray);
+    $favorite = $runners[0];
     $runners = array_slice($runners, 2, count($runners) - 2);
     
     $racetext .= "\t'$raceNumber' => [\n";
@@ -39,7 +40,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $third = $runners[2];
    
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
-    $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
+    $racetext .= "\t\t'favorite' =>  '" . $favorite . "',\n";
     
     $favInfo1 = explode(", ", $favData[$first1]['fav']);
     $favInfo11 = array_slice($favInfo1, 0, 5);
