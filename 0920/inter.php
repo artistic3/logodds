@@ -7,7 +7,7 @@ return [
 		*/
 		'All Runners   '  =>  '2, 3, 4, 1, 5, 7',
 		'favorite' =>  '2',
-		'inter' => '2, 4',//count:2
+		'inter' => '2, 6, 3, 4',//count:4
 	],
 	'2' => [
 		/**
@@ -15,7 +15,7 @@ return [
 		*/
 		'All Runners   '  =>  '6, 4, 8, 5, 1, 11, 2, 3, 10, 7, 9',
 		'favorite' =>  '6',
-		'inter' => '8, 1',//count:2
+		'inter' => '4, 8, 1',//count:3
 	],
 	'3' => [
 		/**
@@ -23,7 +23,7 @@ return [
 		*/
 		'All Runners   '  =>  '7, 5, 1, 3, 2, 6',
 		'favorite' =>  '7',
-		'inter' => '7, 5, 2',//count:3
+		'inter' => '7, 3, 5, 2',//count:4
 	],
 	'4' => [
 		/**
@@ -55,7 +55,7 @@ return [
 		*/
 		'All Runners   '  =>  '1, 7, 3, 2, 5, 4, 6, 8, 10, 11, 9',
 		'favorite' =>  '1',
-		'inter' => '2',//count:1
+		'inter' => '2, 5, 7',//count:3
 	],
 	'8' => [
 		/**
@@ -63,6 +63,6 @@ return [
 		*/
 		'All Runners   '  =>  '6, 11, 7, 1, 4, 10, 2, 3, 9, 5, 8, 12',
 		'favorite' =>  '6',
-		'inter' => '3',//count:1
+		'inter' => '8, 1, 3',//count:3
 	],
 ];

@@ -46,7 +46,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $favInfo2 = array_slice($favInfo2, 0, 5);
     $favInfo3 = explode(", ", $favData[$third]['fav']);
     $favInfo3 = array_slice($favInfo3, 0, 5);
-    $inter = array_intersect($favInfo1, $favInfo2, $favInfo3);
+    $inter = array_intersect($favInfo1, $favInfo2);
     $racetext .= "\t\t'inter' => '" . implode(", ", $inter) . "',//count:" . count($inter) . "\n";
     $racetext .= "\t],\n";
     $outtext .= $racetext;
