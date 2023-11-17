@@ -6,7 +6,7 @@ return [
 		Race 1
 		*/
 		'All Runners   '  =>  '2, 5, 1, 3, 10, 11, 4, 12, 8, 6',
-		'favorite' =>  '2',
+		'favorite' =>  '9',
 		'union1' => '2, 12, 6, 3, 4, 5, 7, 8, 1',//count:9
 		'union2' => '2, 12, 6, 3, 5, 7, 1',//count:7
 		'diff' => '4, 8',//count diff:2
@@ -16,7 +16,7 @@ return [
 		Race 2
 		*/
 		'All Runners   '  =>  '6, 11, 1, 8, 10, 12, 4, 7, 9, 5',
-		'favorite' =>  '6',
+		'favorite' =>  '2',
 		'union1' => '6, 4, 8, 1, 3, 5, 11, 2, 7',//count:9
 		'union2' => '6, 4, 8, 1, 5, 11, 2',//count:7
 		'diff' => '3, 7',//count diff:2
@@ -26,7 +26,7 @@ return [
 		Race 3
 		*/
 		'All Runners   '  =>  '4, 10, 9, 12, 3, 7, 1, 6, 8, 2',
-		'favorite' =>  '4',
+		'favorite' =>  '5',
 		'union1' => '4, 2, 7, 8, 1, 10, 6, 9',//count:8
 		'union2' => '4, 2, 7, 8, 10, 1, 6, 9',//count:8
 		'diff' => '',//count diff:0
@@ -36,7 +36,7 @@ return [
 		Race 4
 		*/
 		'All Runners   '  =>  '10, 11, 8, 9, 3, 2, 6, 12, 4, 7',
-		'favorite' =>  '10',
+		'favorite' =>  '1',
 		'union1' => '10, 1, 4, 6, 7, 5, 8, 11, 3, 9, 2',//count:11
 		'union2' => '10, 1, 4, 6, 5, 8, 11, 9, 2',//count:9
 		'diff' => '7, 3',//count diff:2
@@ -46,7 +46,7 @@ return [
 		Race 5
 		*/
 		'All Runners   '  =>  '8, 2, 7, 3, 12, 5, 4, 11, 10, 9',
-		'favorite' =>  '8',
+		'favorite' =>  '1',
 		'union1' => '8, 1, 9, 2, 6, 12, 3, 4, 7, 5',//count:10
 		'union2' => '8, 1, 9, 2, 12, 6, 3, 7, 5',//count:9
 		'diff' => '4',//count diff:1
@@ -56,7 +56,7 @@ return [
 		Race 6
 		*/
 		'All Runners   '  =>  '12, 3, 9, 11, 4, 2, 5, 6, 10, 8',
-		'favorite' =>  '12',
+		'favorite' =>  '1',
 		'union1' => '5, 6, 10, 11, 1, 3, 2, 4, 9, 7',//count:10
 		'union2' => '5, 6, 10, 11, 3, 1, 2, 4, 9',//count:9
 		'diff' => '7',//count diff:1
@@ -66,7 +66,7 @@ return [
 		Race 7
 		*/
 		'All Runners   '  =>  '4, 5, 3, 8, 10, 11, 1, 7, 9, 12',
-		'favorite' =>  '4',
+		'favorite' =>  '2',
 		'union1' => '4, 2, 7, 8, 1, 5, 3, 6',//count:8
 		'union2' => '4, 2, 7, 8, 5, 3, 1',//count:7
 		'diff' => '6',//count diff:1
@@ -76,7 +76,7 @@ return [
 		Race 8
 		*/
 		'All Runners   '  =>  '6, 8, 1, 2, 9, 5, 3, 11, 10',
-		'favorite' =>  '6',
+		'favorite' =>  '4',
 		'union1' => '6, 4, 8, 1, 3, 9, 2, 5, 7',//count:9
 		'union2' => '6, 4, 8, 1, 9, 2, 5',//count:7
 		'diff' => '3, 7',//count diff:2
@@ -86,7 +86,7 @@ return [
 		Race 9
 		*/
 		'All Runners   '  =>  '5, 11, 8, 4, 3, 7, 6, 2, 9, 12',
-		'favorite' =>  '5',
+		'favorite' =>  '10',
 		'union1' => '5, 7, 2, 3, 8, 11, 1, 9, 6',//count:9
 		'union2' => '5, 7, 2, 3, 8, 11, 1, 9',//count:8
 		'diff' => '6',//count diff:1

@@ -6,7 +6,7 @@ return [
 		Race 1
 		*/
 		'All Runners   '  =>  '6, 1, 8, 5, 4, 9, 10, 3',
-		'favorite' =>  '6',
+		'favorite' =>  '7',
 		'WIN BETS' => [
 			6 =>  20,//rate: 0.2
 			1 =>  20,//rate: 0.2
@@ -24,7 +24,7 @@ return [
 		Race 2
 		*/
 		'All Runners   '  =>  '4, 8, 2, 10, 1, 7, 13, 11, 14, 9, 12, 5',
-		'favorite' =>  '4',
+		'favorite' =>  '3',
 		'WIN BETS' => [
 			4 =>  20,//rate: 0.125
 			8 =>  20,//rate: 0.125
@@ -46,7 +46,7 @@ return [
 		Race 3
 		*/
 		'All Runners   '  =>  '7, 2, 9, 3, 8, 6, 4, 10',
-		'favorite' =>  '7',
+		'favorite' =>  '5',
 		'WIN BETS' => [
 			7 =>  20,//rate: 0.1538
 			2 =>  20,//rate: 0.1538
@@ -64,7 +64,7 @@ return [
 		Race 4
 		*/
 		'All Runners   '  =>  '1, 12, 5, 2, 11, 3, 9, 10, 6, 8',
-		'favorite' =>  '1',
+		'favorite' =>  '7',
 		'WIN BETS' => [
 			1 =>  20,//rate: 0.1538
 			12 =>  20,//rate: 0.1538
@@ -84,7 +84,7 @@ return [
 		Race 5
 		*/
 		'All Runners   '  =>  '9, 6, 3, 10, 2, 7, 4, 5',
-		'favorite' =>  '9',
+		'favorite' =>  '8',
 		'WIN BETS' => [
 			9 =>  10,//rate: 0.1429
 			6 =>  10,//rate: 0.1429
@@ -102,7 +102,7 @@ return [
 		Race 6
 		*/
 		'All Runners   '  =>  '5, 14, 4, 13, 1, 10, 12, 3, 6, 8, 11, 7',
-		'favorite' =>  '5',
+		'favorite' =>  '9',
 		'WIN BETS' => [
 			5 =>  20,//rate: 0.1111
 			14 =>  20,//rate: 0.1111
@@ -124,7 +124,7 @@ return [
 		Race 7
 		*/
 		'All Runners   '  =>  '7, 2, 5, 6, 3, 4, 9, 10',
-		'favorite' =>  '7',
+		'favorite' =>  '1',
 		'WIN BETS' => [
 			7 =>  20,//rate: 0.1818
 			2 =>  20,//rate: 0.1818
@@ -142,7 +142,7 @@ return [
 		Race 8
 		*/
 		'All Runners   '  =>  '4, 6, 3, 7, 5',
-		'favorite' =>  '4',
+		'favorite' =>  '2',
 		'WIN BETS' => [
 			4 =>  10,//rate: 0.25
 			6 =>  10,//rate: 0.25
@@ -157,7 +157,7 @@ return [
 		Race 9
 		*/
 		'All Runners   '  =>  '5, 6, 3, 2, 8, 12, 4, 7, 14, 10, 11, 13',
-		'favorite' =>  '5',
+		'favorite' =>  '1',
 		'WIN BETS' => [
 			5 =>  20,//rate: 0.1053
 			6 =>  20,//rate: 0.1053
@@ -179,7 +179,7 @@ return [
 		Race 10
 		*/
 		'All Runners   '  =>  '2, 1, 6, 12, 7, 5, 3, 11, 9, 10',
-		'favorite' =>  '2',
+		'favorite' =>  '8',
 		'WIN BETS' => [
 			2 =>  20,//rate: 0.1429
 			1 =>  20,//rate: 0.1429

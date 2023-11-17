@@ -6,7 +6,7 @@ return [
 		Race 1
 		*/
 		'All Runners   '  =>  '6, 7, 2, 3, 4',
-		'favorite' =>  '6',
+		'favorite' =>  '1',
 		'WIN BETS' => [
 			6 =>  10,//rate: 0.25
 			7 =>  10,//rate: 0.25
@@ -21,7 +21,7 @@ return [
 		Race 2
 		*/
 		'All Runners   '  =>  '4, 8, 2, 5, 6, 3',
-		'favorite' =>  '4',
+		'favorite' =>  '1',
 		'WIN BETS' => [
 			4 =>  20,//rate: 0.3333
 			8 =>  10,//rate: 0.1667
@@ -37,7 +37,7 @@ return [
 		Race 3
 		*/
 		'All Runners   '  =>  '4, 6, 8, 2, 5',
-		'favorite' =>  '4',
+		'favorite' =>  '3',
 		'WIN BETS' => [
 			4 =>  20,//rate: 0.4
 			6 =>  10,//rate: 0.2
@@ -52,7 +52,7 @@ return [
 		Race 4
 		*/
 		'All Runners   '  =>  '7, 1, 2, 8, 6, 3',
-		'favorite' =>  '7',
+		'favorite' =>  '5',
 		'WIN BETS' => [
 			7 =>  20,//rate: 0.2857
 			1 =>  20,//rate: 0.2857
@@ -68,7 +68,7 @@ return [
 		Race 5
 		*/
 		'All Runners   '  =>  '2, 11, 4, 5, 1, 7, 9, 6, 10, 12',
-		'favorite' =>  '2',
+		'favorite' =>  '8',
 		'WIN BETS' => [
 			2 =>  30,//rate: 0.1765
 			11 =>  30,//rate: 0.1765
@@ -88,7 +88,7 @@ return [
 		Race 6
 		*/
 		'All Runners   '  =>  '10, 7, 1, 4, 8, 9, 2, 5, 12, 11',
-		'favorite' =>  '10',
+		'favorite' =>  '3',
 		'WIN BETS' => [
 			10 =>  20,//rate: 0.1818
 			7 =>  20,//rate: 0.1818
@@ -108,7 +108,7 @@ return [
 		Race 7
 		*/
 		'All Runners   '  =>  '3, 10, 7, 9, 2, 11, 6, 12, 4',
-		'favorite' =>  '3',
+		'favorite' =>  '1',
 		'WIN BETS' => [
 			3 =>  20,//rate: 0.2
 			10 =>  20,//rate: 0.2
@@ -127,7 +127,7 @@ return [
 		Race 8
 		*/
 		'All Runners   '  =>  '6, 10, 1, 2, 3, 9, 7, 8',
-		'favorite' =>  '6',
+		'favorite' =>  '5',
 		'WIN BETS' => [
 			6 =>  20,//rate: 0.2222
 			10 =>  20,//rate: 0.2222
@@ -145,7 +145,7 @@ return [
 		Race 9
 		*/
 		'All Runners   '  =>  '7, 2, 3, 9, 4, 5, 6, 8, 11',
-		'favorite' =>  '7',
+		'favorite' =>  '10',
 		'WIN BETS' => [
 			7 =>  20,//rate: 0.1818
 			2 =>  20,//rate: 0.1818
