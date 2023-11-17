@@ -56,7 +56,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $union1 = array_values(array_unique(array_merge($favInfo1, $favInfo2, $favInfo3, $favInfo4, $favInfo5)));
     $union2 = array_values(array_unique(array_merge($favInfo1, $favInfo2, $favInfo3, $favInfo4)));
     $diff = array_diff($union1, $union2);
-    $racetext .= "\t\t'union' => '" . implode(", ", $union) . "',//count:" . count($union) . "\n";
+    $racetext .= "\t\t'union' => '" . implode(", ", $union) . "',//count:" . count($union2) . "\n";
     $racetext .= "\t\t'diff' => '" . implode(", ", $diff) . "',//count diff:" . count($diff) . "\n";
 
     $racetext .= "\t],\n";
