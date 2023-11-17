@@ -39,8 +39,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     
     $favInfo = explode(", ", $favData[$first1]['fav']);
-    $weirdos = array_slice($favInfo, 8, count($favInfo) - 8);
-    $runners5 = array_slice($runners, 0, 5);
+    $weirdos = array_slice($favInfo, 0, 6);
+    $runners5 = array_slice($runners, 0, 6);
     $inter = array_intersect($runners5, $weirdos);
     $racetext .= "\t\t'inter' => '" . implode(", ", $inter) . "',\n";
     $racetext .= "\t],\n";
