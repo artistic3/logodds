@@ -8,7 +8,7 @@ return [
 		'All Runners   '  =>  '2, 5, 4, 6, 12, 3, 1, 7, 11, 8, 9',
 		'favorite' =>  '2',
 		'inter' => '',//count:0
-		'union' => '',//count:0
+		'union' => '2, 4, 5, 7, 12',//count:5
 	],
 	'2' => [
 		/**
@@ -17,7 +17,7 @@ return [
 		'All Runners   '  =>  '4, 2, 7, 6, 5, 8, 10, 1, 11, 9, 3, 12',
 		'favorite' =>  '4',
 		'inter' => '',//count:0
-		'union' => '',//count:0
+		'union' => '2, 3, 4, 7, 12',//count:5
 	],
 	'3' => [
 		/**
@@ -26,7 +26,7 @@ return [
 		'All Runners   '  =>  '5, 11, 9, 2, 12, 8, 4, 1, 7, 3, 6, 10',
 		'favorite' =>  '5',
 		'inter' => '',//count:0
-		'union' => '',//count:0
+		'union' => '4, 5, 6, 7, 8',//count:5
 	],
 	'4' => [
 		/**
@@ -35,7 +35,7 @@ return [
 		'All Runners   '  =>  '3, 6, 4, 1, 12, 2, 8, 10, 11, 9',
 		'favorite' =>  '3',
 		'inter' => '',//count:0
-		'union' => '',//count:0
+		'union' => '1, 2, 3, 4, 6',//count:5
 	],
 	'5' => [
 		/**
@@ -44,7 +44,7 @@ return [
 		'All Runners   '  =>  '6, 12, 4, 9, 3, 7, 10, 8, 2, 11, 5, 1',
 		'favorite' =>  '6',
 		'inter' => '',//count:0
-		'union' => '',//count:0
+		'union' => '2, 4, 5, 6',//count:4
 	],
 	'6' => [
 		/**
@@ -53,7 +53,7 @@ return [
 		'All Runners   '  =>  '4, 12, 8, 2, 3, 1, 7, 6, 9, 5, 10',
 		'favorite' =>  '4',
 		'inter' => '',//count:0
-		'union' => '',//count:0
+		'union' => '1, 2, 4, 5, 6, 8',//count:6
 	],
 	'7' => [
 		/**
@@ -62,7 +62,7 @@ return [
 		'All Runners   '  =>  '5, 7, 9, 4, 11, 3, 8, 10, 12, 2, 1, 6',
 		'favorite' =>  '5',
 		'inter' => '',//count:0
-		'union' => '',//count:0
+		'union' => '3, 4, 5, 6, 7',//count:5
 	],
 	'8' => [
 		/**
@@ -71,7 +71,7 @@ return [
 		'All Runners   '  =>  '2, 3, 11, 8, 4, 5, 9, 7, 1, 6, 10, 12',
 		'favorite' =>  '2',
 		'inter' => '',//count:0
-		'union' => '',//count:0
+		'union' => '1, 2, 3, 5, 8, 12',//count:6
 	],
 	'9' => [
 		/**
@@ -80,6 +80,6 @@ return [
 		'All Runners   '  =>  '5, 8, 6, 2, 9, 11, 1, 7, 3, 10, 12, 4',
 		'favorite' =>  '5',
 		'inter' => '',//count:0
-		'union' => '',//count:0
+		'union' => '1, 4, 5, 6, 7, 8',//count:6
 	],
 ];
