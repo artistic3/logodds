@@ -53,8 +53,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $favInfo5 = explode(", ", $favData[$fifth]['fav']);
     $favInfo5 = array_slice($favInfo3, 0, 2);
     $inter = array_intersect($favInfo1, $favInfo2, $favInfo3, $favInfo4, $favInfo5);
-    $union = array_values(array_unique(array_intersect($favInfo1, $favInfo2, $favInfo3, $favInfo4, $favInfo5)));
-    $showRace = !empty($inter);
+    $union = array_values(array_unique(array_merge($favInfo1, $favInfo2, $favInfo3, $favInfo4, $favInfo5)));
+    sort($union);
     $racetext .= "\t\t'inter' => '" . implode(", ", $inter) . "',//count:" . count($inter) . "\n";
     $racetext .= "\t\t'union' => '" . implode(", ", $union) . "',//count:" . count($union) . "\n";
 
