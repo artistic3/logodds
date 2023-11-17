@@ -56,6 +56,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $allOdds[$raceNumber];
     asort($tmpArray);
     $runners = array_keys($tmpArray);
+    $favorite = $runners[0];
     $runners = array_slice($runners, 2, count($runners) - 2);
     
     $racetext .= "\t'$raceNumber' => [\n";
@@ -77,7 +78,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $weights = getWeights($favOdds, 2, 10);
    
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
-    $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
+    $racetext .= "\t\t'favorite' =>  '" . $favorite . "',\n";
     $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
     $weights = getWeights($favOdds, 2, 10);
     while(in_array(-1, $weights)){
