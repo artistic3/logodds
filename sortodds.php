@@ -37,6 +37,8 @@ $favFile = __DIR__ . DIRECTORY_SEPARATOR . "favwinqin.php";
 $favData = include($favFile);
 
 $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
+$placeOddsFile = $currentDir . DIRECTORY_SEPARATOR . "plaodds.php";
+if(file_exists($placeOddsFile)) $placeOdds = include($placeOddsFile);
 
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "$step.php";
 if(file_exists($outFile)){
@@ -77,7 +79,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
     $weights = getWeights($favOdds, 2, 10);
-     while(in_array(-1, $weights)){
+    while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
         $weights = getWeights($favOdds, 2, 10);
     }
@@ -118,17 +120,38 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $avg = $totalBets / count($outsiderWeights);
     $outsiderWeightsValues = array_values($outsiderWeights);
     $showRace =  $avg == 10 * $outsiderWeightsValues[0];
-    $racetext .= "\t\t'OUTSIDER BETS' => [\n";
-    foreach($outsiderWeights as $someKey => $someValue){
-        $bet = 10 * $someValue;
-        $rate = round($bet / $totalBets, 4);
-        $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
+    if(isset($placeOdds)){
+        $outsiderOdds = [];
+        foreach($outsiders as $someKey){
+            if(isset($placeOdds[$raceNumber][$someKey])){
+                $outsiderOdds[$someKey] = $placeOdds[$raceNumber][$someKey];
+            }
+        }
+        asort($outsiderOdds);
+        $outsiderWeights = getWeights($outsiderOdds, 0, 10);
+        while(in_array(-1, $outsiderWeights)){
+            $outsiderOdds = array_slice($outsiderOdds, 0, count($outsiderOdds) -1, true);
+            $outsiderWeights = getWeights($outsiderOdds, 2, 10);
+        }
+        $newOutsiders = array_keys($outsiderWeights);
+        $lasts = array_diff($outsiders, $newOutsiders);
+        $totalBets = 0;
+        foreach($outsiderWeights as $someKey => $someValue){
+            $bet = 10 * $someValue;
+            $totalBets += $bet;
+        }
+        $racetext .= "\t\t'OUTSIDER PLACE BETS' => [\n";
+        foreach($outsiderWeights as $someKey => $someValue){
+            $bet = 10 * $someValue;
+            $rate = round($bet / $totalBets, 4);
+            $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
+        }
+        $racetext .= "\t\t],\n";
+        $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
+        $racetext .= "\t\t//count:" . count($outsiderWeights) . "',\n";
+        $racetext .= "\t\t'lasts' => '" . implode(", ", $lasts) . "',\n";
+        $racetext .= "\t],\n";
     }
-    $racetext .= "\t\t],\n";
-    $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
-    $racetext .= "\t\t//count:" . count($outsiderWeights) . "',\n";
- 
-    $racetext .= "\t],\n";
     if($showRace) $outtext .= $racetext;
 }
 
