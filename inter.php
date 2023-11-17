@@ -43,15 +43,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
     
     $favInfo1 = explode(", ", $favData[$first1]['fav']);
-    $favInfo1 = array_slice($favInfo1, 0, 4);
+    $favInfo1 = array_slice($favInfo1, 0, 5);
     $favInfo2 = explode(", ", $favData[$second]['fav']);
-    $favInfo2 = array_slice($favInfo2, 0, 4);
+    $favInfo2 = array_slice($favInfo2, 0, 5);
     $favInfo3 = explode(", ", $favData[$third]['fav']);
-    $favInfo3 = array_slice($favInfo3, 0, 4);
+    $favInfo3 = array_slice($favInfo3, 0, 5);
     $favInfo4 = explode(", ", $favData[$fourth]['fav']);
-    $favInfo4 = array_slice($favInfo3, 0, 4);
+    $favInfo4 = array_slice($favInfo3, 0, 5);
     $favInfo5 = explode(", ", $favData[$fifth]['fav']);
-    $favInfo5 = array_slice($favInfo3, 0, 4);
+    $favInfo5 = array_slice($favInfo3, 0, 5);
     $inter = array_intersect($favInfo1, $favInfo2, $favInfo3, $favInfo4, $favInfo5);
     $union = array_values(array_unique(array_merge($favInfo1, $favInfo2, $favInfo3, $favInfo4, $favInfo5)));
     sort($union);
