@@ -37,7 +37,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $first1 = $runners[0];
     $second = $runners[1];
     $third = $runners[2];
-    $fourth = $runners[3];
    
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $first1 . "',\n";
@@ -54,9 +53,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $favInfo31 = array_slice($favInfo3, 0, 5);
     $favInfo32 = array_slice($favInfo3, 0, 4);
  
-    $favInfo4 = explode(", ", $favData[$fourth]['fav']);
-    $favInfo41 = array_slice($favInfo4, 0, 5);
-    $favInfo42 = array_slice($favInfo4, 0, 4);
+    
     $union1 = array_values(array_unique(array_merge($favInfo11, $favInfo21, $favInfo31)));
     $union2 = array_values(array_unique(array_merge($favInfo12, $favInfo22, $favInfo32)));
 
