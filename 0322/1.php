@@ -18,11 +18,12 @@ return [
 		//Total bets:120',
 		//count:6',
 		'OUTSIDER PLACE BETS' => [
-			9 =>  30,//rate: 1
+			9 =>  90,//rate: 0.6
+			1 =>  60,//rate: 0.4
 		],
-		//Total bets:30',
-		//count:1',
-		'lasts' => '1, 3, 10, 11',
+		//Total bets:150',
+		//count:2',
+		'lasts' => '3, 10, 11',
 	],
 	'2' => [
 		/**
@@ -105,12 +106,12 @@ return [
 		//Total bets:180',
 		//count:5',
 		'OUTSIDER PLACE BETS' => [
-			1 =>  70,//rate: 0.5385
-			12 =>  60,//rate: 0.4615
+			1 =>  40,//rate: 0.5714
+			2 =>  30,//rate: 0.4286
 		],
-		//Total bets:130',
+		//Total bets:70',
 		//count:2',
-		'lasts' => '2, 7, 3',
+		'lasts' => '7, 3, 12',
 	],
 	'6' => [
 		/**
@@ -128,12 +129,12 @@ return [
 		//Total bets:230',
 		//count:5',
 		'OUTSIDER PLACE BETS' => [
-			3 =>  30,//rate: 0.5
-			11 =>  30,//rate: 0.5
+			1 =>  20,//rate: 0.4
+			3 =>  30,//rate: 0.6
 		],
-		//Total bets:60',
+		//Total bets:50',
 		//count:2',
-		'lasts' => '9, 4, 1',
+		'lasts' => '9, 11, 4',
 	],
 	'7' => [
 		/**
@@ -150,11 +151,11 @@ return [
 		//Total bets:190',
 		//count:4',
 		'OUTSIDER PLACE BETS' => [
-			4 =>  20,//rate: 1
+			2 =>  20,//rate: 1
 		],
 		//Total bets:20',
 		//count:1',
-		'lasts' => '5, 3, 8, 2',
+		'lasts' => '4, 5, 3, 8',
 	],
 	'8' => [
 		/**
@@ -173,12 +174,12 @@ return [
 		//Total bets:290',
 		//count:6',
 		'OUTSIDER PLACE BETS' => [
-			1 =>  50,//rate: 0.5556
-			5 =>  40,//rate: 0.4444
+			4 =>  20,//rate: 0.3333
+			1 =>  40,//rate: 0.6667
 		],
-		//Total bets:90',
+		//Total bets:60',
 		//count:2',
-		'lasts' => '2, 9, 4',
+		'lasts' => '2, 9, 5',
 	],
 	'9' => [
 		/**
@@ -197,10 +198,10 @@ return [
 		//Total bets:220',
 		//count:6',
 		'OUTSIDER PLACE BETS' => [
-			8 =>  100,//rate: 0.625
-			10 =>  60,//rate: 0.375
+			10 =>  50,//rate: 0.3333
+			8 =>  100,//rate: 0.6667
 		],
-		//Total bets:160',
+		//Total bets:150',
 		//count:2',
 		'lasts' => '4, 3, 7',
 	],

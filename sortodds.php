@@ -112,6 +112,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $outsiderOdds[$someKey] = $allOdds[$raceNumber][$someKey];
         }
     }
+    asort($outsiderOdds);
+    $outsiders = array_keys($outsiderOdds);
     $outsiderWeights = getWeights($outsiderOdds, 2, 10);
     $totalBets = 0;
     foreach($outsiderWeights as $someKey => $someValue){
@@ -129,7 +131,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
                 $outsiderOdds[$someKey] = $placeOdds[$raceNumber][$someKey];
             }
         }
-        asort($outsiderOdds);
+        // asort($outsiderOdds);
         $outsiderWeights = getWeights($outsiderOdds, 0, 10);
         while(in_array(-1, $outsiderWeights)){
             $outsiderOdds = array_slice($outsiderOdds, 0, count($outsiderOdds) -1, true);
