@@ -43,7 +43,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $favInfo1 = explode(", ", $favData[$first1]['fav']);
     $favInfo1 = array_slice($favInfo1, 0, 5);
     $favInfo2 = explode(", ", $favData[$second]['fav']);
-    $favInfo2 = array_slice($favInfo1, 0, 5);
+    $favInfo2 = array_slice($favInfo2, 0, 5);
     $favInfo3 = explode(", ", $favData[$third]['fav']);
     $favInfo3 = array_slice($favInfo3, 0, 5);
     $inter = array_intersect($favInfo1, $favInfo2);
