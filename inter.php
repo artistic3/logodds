@@ -47,11 +47,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $favInfo2 = array_slice($favInfo2, 0, 5);
     $favInfo3 = explode(", ", $favData[$third]['fav']);
     $favInfo3 = array_slice($favInfo3, 0, 5);
-    // $favInfo4 = explode(", ", $favData[$fourth]['fav']);
-    // $favInfo4 = array_slice($favInfo3, 0, 5);
-    $inter = array_intersect($favInfo1, $favInfo2, $favInfo3);
-    $outsiders = array_slice($runners, 6, count($runners) - 6);
-    $showRace = !empty(array_intersect($inter, $outsiders));
+    $favInfo4 = explode(", ", $favData[$fourth]['fav']);
+    $favInfo4 = array_slice($favInfo3, 0, 5);
+    $inter = array_intersect($favInfo1, $favInfo2, $favInfo3, $favInfo4);
+    $showRace = !empty($inter);
     $racetext .= "\t\t'inter' => '" . implode(", ", $inter) . "',//count:" . count($inter) . "\n";
     $racetext .= "\t\t'sure place' => '" . $first1 . "',//count:" . count($inter) . "\n";
 

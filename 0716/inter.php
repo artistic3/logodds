@@ -1,6 +1,33 @@
 <?php
 
 return [
+	'1' => [
+		/**
+		Race 1
+		*/
+		'All Runners   '  =>  '5, 6, 3, 7, 13, 8, 2, 4, 10, 14, 11, 9, 1',
+		'favorite' =>  '5',
+		'inter' => '3',//count:1
+		'sure place' => '5',//count:1
+	],
+	'2' => [
+		/**
+		Race 2
+		*/
+		'All Runners   '  =>  '2, 9, 5, 1, 11, 10, 12, 7, 8, 3, 4, 13, 6',
+		'favorite' =>  '2',
+		'inter' => '2',//count:1
+		'sure place' => '2',//count:1
+	],
+	'3' => [
+		/**
+		Race 3
+		*/
+		'All Runners   '  =>  '1, 8, 12, 6, 10, 3, 14, 7, 2, 9, 4, 5, 11, 13',
+		'favorite' =>  '1',
+		'inter' => '1, 6',//count:2
+		'sure place' => '1',//count:2
+	],
 	'4' => [
 		/**
 		Race 4
@@ -9,6 +36,15 @@ return [
 		'favorite' =>  '4',
 		'inter' => '7, 1',//count:2
 		'sure place' => '4',//count:2
+	],
+	'5' => [
+		/**
+		Race 5
+		*/
+		'All Runners   '  =>  '9, 8, 4, 2, 3, 12, 1, 7, 5, 6, 13, 14, 11, 10',
+		'favorite' =>  '9',
+		'inter' => '2',//count:1
+		'sure place' => '9',//count:1
 	],
 	'6' => [
 		/**
@@ -27,6 +63,24 @@ return [
 		'favorite' =>  '14',
 		'inter' => '2, 6',//count:2
 		'sure place' => '14',//count:2
+	],
+	'8' => [
+		/**
+		Race 8
+		*/
+		'All Runners   '  =>  '2, 8, 6, 5, 4, 3, 11, 9, 10, 1, 12, 7',
+		'favorite' =>  '2',
+		'inter' => '6',//count:1
+		'sure place' => '2',//count:1
+	],
+	'9' => [
+		/**
+		Race 9
+		*/
+		'All Runners   '  =>  '1, 8, 2, 6, 4, 12, 9, 7, 13, 5, 3, 14, 11, 10',
+		'favorite' =>  '1',
+		'inter' => '2, 6',//count:2
+		'sure place' => '1',//count:2
 	],
 	'10' => [
 		/**

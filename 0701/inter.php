@@ -37,6 +37,15 @@ return [
 		'inter' => '1, 2',//count:2
 		'sure place' => '3',//count:2
 	],
+	'5' => [
+		/**
+		Race 5
+		*/
+		'All Runners   '  =>  '6, 1, 10, 4, 11, 5, 2, 7, 3, 8, 12, 13, 14, 9',
+		'favorite' =>  '6',
+		'inter' => '6, 1',//count:2
+		'sure place' => '6',//count:2
+	],
 	'6' => [
 		/**
 		Race 6
@@ -45,6 +54,24 @@ return [
 		'favorite' =>  '7',
 		'inter' => '2',//count:1
 		'sure place' => '7',//count:1
+	],
+	'7' => [
+		/**
+		Race 7
+		*/
+		'All Runners   '  =>  '4, 7, 2, 5, 1, 9, 6, 10, 8, 13, 14, 3, 12, 11',
+		'favorite' =>  '4',
+		'inter' => '4, 2',//count:2
+		'sure place' => '4',//count:2
+	],
+	'8' => [
+		/**
+		Race 8
+		*/
+		'All Runners   '  =>  '2, 6, 10, 8, 4, 1, 5, 3, 7, 13, 12, 11, 9',
+		'favorite' =>  '2',
+		'inter' => '6, 4',//count:2
+		'sure place' => '2',//count:2
 	],
 	'9' => [
 		/**

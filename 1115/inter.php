@@ -10,6 +10,24 @@ return [
 		'inter' => '6',//count:1
 		'sure place' => '10',//count:1
 	],
+	'2' => [
+		/**
+		Race 2
+		*/
+		'All Runners   '  =>  '4, 2, 1, 6, 7, 8, 5, 3',
+		'favorite' =>  '4',
+		'inter' => '2',//count:1
+		'sure place' => '4',//count:1
+	],
+	'4' => [
+		/**
+		Race 4
+		*/
+		'All Runners   '  =>  '1, 4, 11, 2, 3, 9, 5, 6, 8, 10, 12, 7',
+		'favorite' =>  '1',
+		'inter' => '1',//count:1
+		'sure place' => '1',//count:1
+	],
 	'5' => [
 		/**
 		Race 5
