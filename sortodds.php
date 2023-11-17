@@ -105,6 +105,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outsiders = array_keys($outsiderOdds);
     $outsiders[] = $runners[$lastOutsiderPos + 1];
     $outsiders[] = $runners[$lastOutsiderPos + 2];
+    $outsiders[] = $first1;
     $outsiderOdds = [];
     foreach($outsiders as $someKey){
         if(isset($allOdds[$raceNumber][$someKey])){
@@ -119,7 +120,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $avg = $totalBets / count($outsiderWeights);
     $outsiderWeightsValues = array_values($outsiderWeights);
-    $showRace =  $avg == 10 * $outsiderWeightsValues[0];
+    // $showRace =  $avg == 10 * $outsiderWeightsValues[0];
+    $showRace = true;
     if(isset($placeOdds)){
         $outsiderOdds = [];
         foreach($outsiders as $someKey){
