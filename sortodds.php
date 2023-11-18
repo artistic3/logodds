@@ -70,7 +70,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $showRace = $first <= 7 && $second <= 7 && $third <= 7 && $fourth <= 7;
     
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
-    $racetext .= "\t\t'place' => '" . $first . "',\n";
+    $racetext .= "\t\t'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12's odds',\n";
 
     $racetext .= "\t],\n";
     if(!$showRace) $outtext .= $racetext;
