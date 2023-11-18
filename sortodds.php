@@ -70,13 +70,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     
     //determine odds weights
     $favKeys1 = explode(", ", $favData[$first]['fav']);
-    $favKeys1 = array_slice($favKeys1, 0, 5);
+    $favKeys1 = array_slice($favKeys1, 0, 7);
     $favKeys2 = explode(", ", $favData[$second]['fav']);
-    $favKeys2 = array_slice($favKeys2, 0, 5);
-    // $favKeys3 = explode(", ", $favData[$third]['fav']);
-    // $favKeys3 = array_slice($favKeys3, 0, 5);
+    $favKeys2 = array_slice($favKeys2, 0, 7);
     $favKeys = array_values(array_unique(array_merge($favKeys1, $favKeys2)));
-    // $favKeys = array_values(array_unique(array_merge($favKeys1, $favKeys2, $favKeys3)));
     $favOdds = [];
     foreach($favKeys as $someKey){
         if(isset($allOdds[$raceNumber][$someKey])){
