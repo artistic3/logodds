@@ -28,7 +28,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     asort($tmpArray);
     $runners = array_keys($tmpArray);
     $favorite = $runners[0];
-    $runners = array_slice($runners, 2, count($runners) - 2);
     
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
