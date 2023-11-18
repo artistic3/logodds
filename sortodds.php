@@ -67,7 +67,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $third = $runners[2];
     $fourth = $runners[3];
 
-    $showRace = $first <= 9 && $second <= 9 && $third <= 9 && $fourth <= 9;
+    $showRace = $first <= 7 && $second <= 7 && $third <= 7 && $fourth <= 7;
     
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'place' => '" . $first . "',\n";
