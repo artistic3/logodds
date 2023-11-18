@@ -34,24 +34,24 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
 
-    $first1 = $runners[0];
+    $first = $runners[0];
     $second = $runners[1];
     $third = $runners[2];
    
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
     $racetext .= "\t\t'favorite' =>  '" . $favorite . "',\n";
     
-    $favInfo1 = explode(", ", $favData[$first1]['fav']);
-    $favInfo11 = array_slice($favInfo1, 0, 5);
-    $favInfo12 = array_slice($favInfo1, 0, 4);
+    $favInfo1 = explode(", ", $favData[$first]['fav']);
+    $favInfo11 = array_slice($favInfo1, 0, 4);
+    $favInfo12 = array_slice($favInfo1, 0, 3);
 
     $favInfo2 = explode(", ", $favData[$second]['fav']);
-    $favInfo21 = array_slice($favInfo2, 0, 5);
-    $favInfo22 = array_slice($favInfo2, 0, 4);
+    $favInfo21 = array_slice($favInfo2, 0, 4);
+    $favInfo22 = array_slice($favInfo2, 0, 3);
  
     $favInfo3 = explode(", ", $favData[$third]['fav']);
-    $favInfo31 = array_slice($favInfo3, 0, 5);
-    $favInfo32 = array_slice($favInfo3, 0, 4);
+    $favInfo31 = array_slice($favInfo3, 0, 4);
+    $favInfo32 = array_slice($favInfo3, 0, 3);
  
     
     $union1 = array_values(array_unique(array_merge($favInfo11, $favInfo21, $favInfo31)));
