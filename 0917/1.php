@@ -6,41 +6,47 @@ return [
 		Race 2
 		*/
 		'All Runners   '  =>  '6, 12, 5, 8, 1, 2, 4, 14, 9, 3, 7, 13, 10',
-		'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12's odds',
+		//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',
+		//'place' => 'if 12 is last in odds then favorite win',
 	],
 	'4' => [
 		/**
 		Race 4
 		*/
 		'All Runners   '  =>  '3, 14, 9, 2, 5, 13, 4, 7, 8, 11, 6, 10, 1, 12',
-		'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12's odds',
+		//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',
+		//'place' => 'if 12 is last in odds then favorite win',
 	],
 	'5' => [
 		/**
 		Race 5
 		*/
 		'All Runners   '  =>  '1, 2, 11, 8, 5, 7, 4, 3, 6, 12, 10, 9',
-		'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12's odds',
+		//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',
+		//'place' => 'if 12 is last in odds then favorite win',
 	],
 	'7' => [
 		/**
 		Race 7
 		*/
 		'All Runners   '  =>  '4, 3, 9, 1, 5, 6, 2, 8, 7',
-		'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12's odds',
+		//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',
+		//'place' => 'if 12 is last in odds then favorite win',
 	],
 	'8' => [
 		/**
 		Race 8
 		*/
 		'All Runners   '  =>  '8, 13, 3, 1, 6, 10, 4, 2, 5, 9, 11, 7, 12, 14',
-		'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12's odds',
+		//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',
+		//'place' => 'if 12 is last in odds then favorite win',
 	],
 	'10' => [
 		/**
 		Race 10
 		*/
 		'All Runners   '  =>  '2, 9, 10, 5, 8, 12, 3, 1, 6, 4, 7, 11',
-		'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12's odds',
+		//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',
+		//'place' => 'if 12 is last in odds then favorite win',
 	],
 ];
