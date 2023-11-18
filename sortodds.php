@@ -66,13 +66,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $second = $runners[1];
     $third = $runners[2];
 
+    $showRace = $first >= 8 && $second >= 8;
+
     //determine odds weights
-    $favKeys = explode(", ", $favData[$first]['fav']);
-    $favKeys = array_slice($favKeys, 0, 5);
-    // $favKeys2 = explode(", ", $favData[$second]['fav']);
-    // $favKeys2 = array_slice($favKeys2, 0, 5);
+    $favKeys1 = explode(", ", $favData[$first]['fav']);
+    $favKeys1 = array_slice($favKeys1, 0, 5);
+    $favKeys2 = explode(", ", $favData[$second]['fav']);
+    $favKeys2 = array_slice($favKeys2, 0, 5);
     // $favKeys3 = explode(", ", $favData[$third]['fav']);
     // $favKeys3 = array_slice($favKeys3, 0, 5);
+    $favKeys = array_values(array_unique(array_merge($favKeys1, $favKeys2)));
     // $favKeys = array_values(array_unique(array_merge($favKeys1, $favKeys2, $favKeys3)));
     $favOdds = [];
     foreach($favKeys as $someKey){
@@ -113,7 +116,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t//count:" . count($weights) . "',\n";
 
     $racetext .= "\t],\n";
-    $outtext .= $racetext;
+    if($showRace) $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
