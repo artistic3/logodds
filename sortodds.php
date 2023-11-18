@@ -65,52 +65,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $first = $runners[0];
     $second = $runners[1];
     $third = $runners[2];
+    $fourth = $runners[3];
 
-    $showRace = ($first <= 8) && ($second <= 8);
+    $showRace = $first <= 9 && $second <= 9 && $third <= 9 && $fourth <= 9;
     
-    //determine odds weights
-    $favKeys1 = explode(", ", $favData[$first]['fav']);
-    $favKeys1 = array_slice($favKeys1, 0, 5);
-    $favKeys2 = explode(", ", $favData[$second]['fav']);
-    $favKeys2 = array_slice($favKeys2, 0, 5);
-    $favKeys = array_values(array_unique(array_merge($favKeys1, $favKeys2)));
-    $favOdds = [];
-    foreach($favKeys as $someKey){
-        if(isset($allOdds[$raceNumber][$someKey])){
-            $favOdds[$someKey] = $allOdds[$raceNumber][$someKey];
-        }
-    }
-    asort($favOdds);
-    $weights = getWeights($favOdds, 10, 10);
-   
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
-    while(in_array(-1, $weights)){
-        $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
-        $weights = getWeights($favOdds, 10, 10);
-    }
-    
-    $totalBets = 0;
-    $racetext .= "\t\t'WIN BETS' => [\n";
-    foreach($weights as $someKey => $someValue){
-        $bet = 10 * $someValue;
-        $totalBets += $bet;
-    }
-    foreach($weights as $someKey => $someValue){
-        $bet = 10 * $someValue;
-        $rate = round($bet / $totalBets, 4);        
-        $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
-    }
-    $selected = array_keys($weights);
-    $countSelected = count($selected);
-    $toCompare = array_slice($runners, 0, $countSelected);
-    $diff1 = array_diff($toCompare, $selected);
-    $diff2 = array_diff($selected, $toCompare);
-    $racetext .= "\t\t'diff1' => '" . implode(", ", $diff1) . "',\n";
-    $racetext .= "\t\t'diff2' => '" . implode(", ", $diff2) . "',\n";
-
-    $racetext .= "\t\t],\n";
-    $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
-    $racetext .= "\t\t//count:" . count($weights) . "',\n";
+    $racetext .= "\t\t'place' => '" . $first . "',\n";
 
     $racetext .= "\t],\n";
     if($showRace) $outtext .= $racetext;
