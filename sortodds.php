@@ -66,8 +66,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $second = $runners[1];
     $third = $runners[2];
 
-    $showRace = $first >= 8 && $second >= 8;
-
+    $showRace = ($first <= 8) && ($second <= 8);
+    
     //determine odds weights
     $favKeys1 = explode(", ", $favData[$first]['fav']);
     $favKeys1 = array_slice($favKeys1, 0, 5);
