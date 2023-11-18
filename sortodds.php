@@ -56,14 +56,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $tmpArray = $allOdds[$raceNumber];
     asort($tmpArray);
     $runners = array_keys($tmpArray);
-    $favorite = $runners[0];
     
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
 
-    $first1 = $runners[0];
+    $first = $runners[0];
+    $second = $runners[1];
 
     //determine odds weights
     $favKeys = $runners;
@@ -77,8 +77,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $weights = getWeights($favOdds, 2, 10);
    
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
-    $racetext .= "\t\t'favorite' =>  '" . $favorite . "',\n";
-    $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
     $weights = getWeights($favOdds, 2, 10);
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
@@ -93,8 +91,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     foreach($weights as $someKey => $someValue){
         $bet = 10 * $someValue;
-        $rate = round($bet / $totalBets, 4);
+        $rate = round($bet / $totalBets, 4);        
         $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
+        if($rate >= 0.2 && $rate < 0.3){
+            $racetext .= "\t\t\t'Place' => '". $someKey . "',\n";
+        }
     }
     $racetext .= "\t\t],\n";
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
@@ -106,7 +107,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outsiders = array_keys($outsiderOdds);
     $outsiders[] = $runners[$lastOutsiderPos + 1];
    if(isset($runners[$lastOutsiderPos + 2])) $outsiders[] = $runners[$lastOutsiderPos + 2];
-    $outsiders[] = $first1;
+    $outsiders[] = $first;
     $outsiderOdds = [];
     foreach($outsiders as $someKey){
         if(isset($allOdds[$raceNumber][$someKey])){
