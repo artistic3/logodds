@@ -7,6 +7,8 @@ return [
 		*/
 		'All Runners   '  =>  '3, 10, 2, 1, 7, 5, 6, 9, 11, 4, 8, 12',
 		'WIN BETS' => [
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:0',
 		//count:0',
@@ -17,6 +19,8 @@ return [
 		*/
 		'All Runners   '  =>  '1, 6, 2, 4, 3, 5',
 		'WIN BETS' => [
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:0',
 		//count:0',
@@ -30,6 +34,8 @@ return [
 			2 =>  80,//rate: 0.4444
 			10 =>  50,//rate: 0.2778
 			4 =>  50,//rate: 0.2778
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:180',
 		//count:3',
@@ -42,6 +48,8 @@ return [
 		'WIN BETS' => [
 			2 =>  90,//rate: 0.6429
 			11 =>  50,//rate: 0.3571
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:140',
 		//count:2',
@@ -53,6 +61,8 @@ return [
 		'All Runners   '  =>  '7, 3, 9, 6, 8, 5, 11, 1, 4, 10, 12',
 		'WIN BETS' => [
 			7 =>  70,//rate: 1
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:70',
 		//count:1',
@@ -64,6 +74,8 @@ return [
 		'All Runners   '  =>  '2, 7, 6, 3, 11, 4, 9, 1, 12, 10, 5, 8',
 		'WIN BETS' => [
 			2 =>  90,//rate: 1
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:90',
 		//count:1',
@@ -76,6 +88,8 @@ return [
 		'WIN BETS' => [
 			4 =>  80,//rate: 0.5714
 			9 =>  60,//rate: 0.4286
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:140',
 		//count:2',
@@ -87,6 +101,8 @@ return [
 		'All Runners   '  =>  '10, 7, 8, 6, 1, 11, 2, 5, 9, 3, 4, 12',
 		'WIN BETS' => [
 			10 =>  100,//rate: 1
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:100',
 		//count:1',
@@ -100,6 +116,8 @@ return [
 			3 =>  100,//rate: 0.5263
 			5 =>  50,//rate: 0.2632
 			11 =>  40,//rate: 0.2105
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:190',
 		//count:3',
@@ -110,6 +128,8 @@ return [
 		*/
 		'All Runners   '  =>  '1, 3, 12, 5, 9, 4, 7, 10, 8, 2, 6, 11',
 		'WIN BETS' => [
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:0',
 		//count:0',
@@ -127,6 +147,8 @@ return [
 			9 =>  50,//rate: 0.1316
 			2 =>  30,//rate: 0.0789
 			5 =>  20,//rate: 0.0526
+		'diff1' => '13, 10',
+		'diff2' => '2, 5',
 		],
 		//Total bets:380',
 		//count:7',

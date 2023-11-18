@@ -9,6 +9,8 @@ return [
 		'WIN BETS' => [
 			2 =>  100,//rate: 0.5
 			3 =>  100,//rate: 0.5
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:200',
 		//count:2',
@@ -23,6 +25,8 @@ return [
 			4 =>  90,//rate: 0.2727
 			8 =>  80,//rate: 0.2424
 			1 =>  70,//rate: 0.2121
+		'diff1' => '5',
+		'diff2' => '1',
 		],
 		//Total bets:330',
 		//count:4',
@@ -35,6 +39,8 @@ return [
 		'WIN BETS' => [
 			7 =>  100,//rate: 0.5263
 			5 =>  90,//rate: 0.4737
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:190',
 		//count:2',
@@ -49,6 +55,8 @@ return [
 			11 =>  90,//rate: 0.2903
 			1 =>  70,//rate: 0.2258
 			7 =>  50,//rate: 0.1613
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:310',
 		//count:4',
@@ -61,6 +69,8 @@ return [
 		'WIN BETS' => [
 			3 =>  100,//rate: 0.7143
 			7 =>  40,//rate: 0.2857
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:140',
 		//count:2',
@@ -75,6 +85,8 @@ return [
 			2 =>  80,//rate: 0.2759
 			3 =>  60,//rate: 0.2069
 			1 =>  60,//rate: 0.2069
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:290',
 		//count:4',
@@ -88,6 +100,8 @@ return [
 			1 =>  70,//rate: 0.3889
 			7 =>  60,//rate: 0.3333
 			3 =>  50,//rate: 0.2778
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:180',
 		//count:3',
@@ -101,6 +115,8 @@ return [
 			6 =>  90,//rate: 0.45
 			11 =>  60,//rate: 0.3
 			7 =>  50,//rate: 0.25
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:200',
 		//count:3',

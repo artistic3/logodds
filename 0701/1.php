@@ -10,6 +10,8 @@ return [
 			1 =>  100,//rate: 0.4762
 			10 =>  60,//rate: 0.2857
 			3 =>  50,//rate: 0.2381
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:210',
 		//count:3',
@@ -25,6 +27,8 @@ return [
 			7 =>  40,//rate: 0.16
 			2 =>  40,//rate: 0.16
 			6 =>  30,//rate: 0.12
+		'diff1' => '13, 5',
+		'diff2' => '2, 6',
 		],
 		//Total bets:250',
 		//count:5',
@@ -36,6 +40,8 @@ return [
 		'All Runners   '  =>  '7, 1, 13, 3, 11, 5, 6, 9, 14, 12, 4, 2, 10, 8',
 		'WIN BETS' => [
 			7 =>  80,//rate: 1
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:80',
 		//count:1',
@@ -49,6 +55,8 @@ return [
 			3 =>  100,//rate: 0.5556
 			4 =>  50,//rate: 0.2778
 			2 =>  30,//rate: 0.1667
+		'diff1' => '13',
+		'diff2' => '2',
 		],
 		//Total bets:180',
 		//count:3',
@@ -63,6 +71,8 @@ return [
 			1 =>  60,//rate: 0.24
 			10 =>  60,//rate: 0.24
 			4 =>  50,//rate: 0.2
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:250',
 		//count:4',
@@ -75,6 +85,8 @@ return [
 		'WIN BETS' => [
 			7 =>  70,//rate: 0.5833
 			3 =>  50,//rate: 0.4167
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:120',
 		//count:2',
@@ -88,6 +100,8 @@ return [
 			4 =>  100,//rate: 0.5
 			7 =>  50,//rate: 0.25
 			2 =>  50,//rate: 0.25
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:200',
 		//count:3',
@@ -98,6 +112,8 @@ return [
 		*/
 		'All Runners   '  =>  '2, 6, 10, 8, 4, 1, 5, 3, 7, 13, 12, 11, 9',
 		'WIN BETS' => [
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:0',
 		//count:0',
@@ -110,6 +126,8 @@ return [
 		'WIN BETS' => [
 			2 =>  100,//rate: 0.5882
 			6 =>  70,//rate: 0.4118
+		'diff1' => '',
+		'diff2' => '',
 		],
 		//Total bets:170',
 		//count:2',
@@ -127,6 +145,8 @@ return [
 			3 =>  30,//rate: 0.0938
 			1 =>  20,//rate: 0.0625
 			9 =>  20,//rate: 0.0625
+		'diff1' => '13, 5, 7',
+		'diff2' => '3, 1, 9',
 		],
 		//Total bets:320',
 		//count:7',

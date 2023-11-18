@@ -99,10 +99,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $bet = 10 * $someValue;
         $rate = round($bet / $totalBets, 4);        
         $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
-        // if($rate >= 0.2 && $rate < 0.3){
-        //     $racetext .= "\t\t\t'Place' => '". $someKey . "',\n";
-        // }
     }
+    $selected = array_keys($weights);
+    $countSelected = count($selected);
+    $toCompare = array_slice($runners, 0, $countSelected);
+    $diff1 = array_diff($toCompare, $selected);
+    $diff2 = array_diff($selected, $toCompare);
+    $racetext .= "\t\t'diff1' => '" . implode(", ", $diff1) . "',\n";
+    $racetext .= "\t\t'diff2' => '" . implode(", ", $diff2) . "',\n";
+
     $racetext .= "\t\t],\n";
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     $racetext .= "\t\t//count:" . count($weights) . "',\n";
