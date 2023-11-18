@@ -73,7 +73,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'place' => '" . $first . "',\n";
 
     $racetext .= "\t],\n";
-    if($showRace) $outtext .= $racetext;
+    if(!$showRace) $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
