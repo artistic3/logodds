@@ -64,9 +64,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     $first = $runners[0];
     $second = $runners[1];
+    $third = $runners[2];
 
     //determine odds weights
-    $favKeys = $runners;
+    $favKeys1 = explode(", ", $favData[$first]['fav']);
+    $favKeys1 = array_slice($favKeys1, 0, 5);
+    $favKeys2 = explode(", ", $favData[$second]['fav']);
+    $favKeys2 = array_slice($favKeys2, 0, 5);
+    $favKeys3 = explode(", ", $favData[$third]['fav']);
+    $favKeys3 = array_slice($favKeys3, 0, 5);
+    $favKeys = array_values(array_unique(array_merge($favKeys1, $favKeys2, $favKeys3)));
     $favOdds = [];
     foreach($favKeys as $someKey){
         if(isset($allOdds[$raceNumber][$someKey])){
@@ -100,64 +107,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
     $racetext .= "\t\t//count:" . count($weights) . "',\n";
 
-    $lastOutsider = array_key_last($weights);
-    $lastOutsiderPos = array_search($lastOutsider, $runners);
-    $outsiderOdds = array_slice($weights, -2, 2, true);
-    $outsiders = array_keys($outsiderOdds);
-    $outsiders[] = $runners[$lastOutsiderPos + 1];
-   if(isset($runners[$lastOutsiderPos + 2])) $outsiders[] = $runners[$lastOutsiderPos + 2];
-    $outsiders[] = $first;
-    $outsiderOdds = [];
-    foreach($outsiders as $someKey){
-        if(isset($allOdds[$raceNumber][$someKey])){
-            $outsiderOdds[$someKey] = $allOdds[$raceNumber][$someKey];
-        }
-    }
-    asort($outsiderOdds);
-    $outsiders = array_keys($outsiderOdds);
-    $outsiderWeights = getWeights($outsiderOdds, 2, 10);
-    $totalBets = 0;
-    foreach($outsiderWeights as $someKey => $someValue){
-        $bet = 10 * $someValue;
-        $totalBets += $bet;
-    }
-    $avg = $totalBets / count($outsiderWeights);
-    $outsiderWeightsValues = array_values($outsiderWeights);
-    // $showRace =  $avg == 10 * $outsiderWeightsValues[0];
-    $showRace = true;
-    if(isset($placeOdds)){
-        $outsiderOdds = [];
-        foreach($outsiders as $someKey){
-            if(isset($placeOdds[$raceNumber][$someKey])){
-                $outsiderOdds[$someKey] = $placeOdds[$raceNumber][$someKey];
-            }
-        }
-        // asort($outsiderOdds);
-        $outsiderWeights = getWeights($outsiderOdds, 0, 10);
-        while(in_array(-1, $outsiderWeights)){
-            $outsiderOdds = array_slice($outsiderOdds, 0, count($outsiderOdds) -1, true);
-            $outsiderWeights = getWeights($outsiderOdds, 2, 10);
-        }
-        $newOutsiders = array_keys($outsiderWeights);
-        $lasts = array_diff($outsiders, $newOutsiders);
-        $totalBets = 0;
-        foreach($outsiderWeights as $someKey => $someValue){
-            $bet = 10 * $someValue;
-            $totalBets += $bet;
-        }
-        $racetext .= "\t\t'OUTSIDER PLACE BETS' => [\n";
-        foreach($outsiderWeights as $someKey => $someValue){
-            $bet = 10 * $someValue;
-            $rate = round($bet / $totalBets, 4);
-            $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
-        }
-        $racetext .= "\t\t],\n";
-        $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
-        $racetext .= "\t\t//count:" . count($outsiderWeights) . "',\n";
-        $racetext .= "\t\t'lasts' => '" . implode(", ", $lasts) . "',\n";
-    }
     $racetext .= "\t],\n";
-    if($showRace) $outtext .= $racetext;
+    $outtext .= $racetext;
 }
 
 $outtext .= "];\n";
