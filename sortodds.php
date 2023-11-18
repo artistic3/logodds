@@ -74,13 +74,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     asort($favOdds);
-    $weights = getWeights($favOdds, 2, 10);
+    $weights = getWeights($favOdds, 10, 10);
    
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
-    $weights = getWeights($favOdds, 2, 10);
     while(in_array(-1, $weights)){
         $favOdds = array_slice($favOdds, 0, count($favOdds) -1, true);
-        $weights = getWeights($favOdds, 2, 10);
+        $weights = getWeights($favOdds, 10, 10);
     }
     
     $totalBets = 0;
@@ -93,9 +92,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $bet = 10 * $someValue;
         $rate = round($bet / $totalBets, 4);        
         $racetext .= "\t\t\t". $someKey ." =>  " . $bet . ",//rate: $rate\n";
-        if($rate >= 0.2 && $rate < 0.3){
-            $racetext .= "\t\t\t'Place' => '". $someKey . "',\n";
-        }
+        // if($rate >= 0.2 && $rate < 0.3){
+        //     $racetext .= "\t\t\t'Place' => '". $someKey . "',\n";
+        // }
     }
     $racetext .= "\t\t],\n";
     $racetext .= "\t\t//Total bets:" . $totalBets . "',\n";
