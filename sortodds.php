@@ -56,7 +56,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(isset($runners[$pos + 1])) $place[] = $runners[$pos + 1];
         $places = array_values(array_unique(array_merge($places, $place)));
         $racetext .= "\t\t'Place'  => '" . implode(", ", $place).  "',\n";
-        $racetext .= "\t\t'places' => '" . implode(", ", $places).  "',\n";
         if($pos == count($runners) - 1){
             if(!in_array($first, $wps)) $wps[] = $first;
         }
@@ -67,6 +66,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $minus8 = $runners[$pos - 8];
             $racetext .= "\t\t'Minus8' => '" . $minus8 .  "',\n";
         }
+    }
+    if(!empty($places)){
+        $racetext .= "\t\t'places' => '" . implode(", ", $places).  "',\n";
     }
     if(!empty($wps)){
         $racetext .= "\t\t'WP' => '" . implode(", ", $wps) .  "',\n";
