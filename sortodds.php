@@ -1,46 +1,14 @@
 <?php
 
-function getWeights($odds, $profit = 0, $precision = 10){
-    $weights = [];
-    $totalWeights = 0;
-    foreach($odds as $key => $value){
-        $weights[$key] = 1;
-        $totalWeights += $weights[$key];
-    }
-    $criterion = true;
-    foreach($odds as $key => $value){
-        $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights + $profit);
-    }
-    $iterations = 0;
-    while($criterion === false){
-        $criterion = true;
-        foreach($odds as $key => $value){
-            if($weights[$key] * $odds[$key] < $totalWeights + $profit){
-                $weights[$key] +=1;
-                $totalWeights += 1;
-            }
-            $criterion = $criterion && ($weights[$key] * $odds[$key] >= $totalWeights + $profit);
-        }
-        $iterations ++;
-        if($iterations == $precision) return array_fill(0, count($odds), -1);
-    }
-    return $weights;
-}
-
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
 $step = 1;
 $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
-$favFile = __DIR__ . DIRECTORY_SEPARATOR . "favwinqin.php";
-$favData = include($favFile);
-
 $allOdds = include($currentDir . DIRECTORY_SEPARATOR . "getodds.php");
-$placeOddsFile = $currentDir . DIRECTORY_SEPARATOR . "plaodds.php";
-if(file_exists($placeOddsFile)) $placeOdds = include($placeOddsFile);
-
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "$step.php";
+
 if(file_exists($outFile)){
     $oldData = include($outFile);
 }
@@ -62,19 +30,26 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
 
-    $first = $runners[0];
-    $second = $runners[1];
-    $third = $runners[2];
-    $fourth = $runners[3];
-
-    $showRace = $first <= 7 && $second <= 7 && $third <= 7 && $fourth <= 7;
-    
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
-    $racetext .= "\t\t//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',\n";
-    $racetext .= "\t\t//'place' => 'if 12 is last in odds then favorite win',\n";
 
+    $first = $runners[0];
+
+    $pos = array_search(12, $runners);
+    if($pos){
+        $place = [$runners[$pos]];
+        if(isset($runners[$pos - 1])) $place[] = $runners[$pos - 1];
+        if(isset($runners[$pos + 1])) $place[] = $runners[$pos + 1];
+        $racetext .= "\t\t'Place' => '" . implode(", ", $place).  "',\n";
+        if($pos == count($runners) - 1){
+            $racetext .= "\t\t'WP' => '" . $first .  "',\n";
+        }
+        if($pos < 6){
+            $racetext .= "\t\t//In first 6 runners!\n";
+        }
+    }
+    
     $racetext .= "\t],\n";
-    if(!$showRace) $outtext .= $racetext;
+    $outtext .= $racetext;
 }
 
 $outtext .= "];\n";

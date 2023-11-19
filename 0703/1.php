@@ -6,31 +6,60 @@ return [
 		Race 1
 		*/
 		'All Runners   '  =>  '11, 4, 14, 2, 3, 7, 1, 13, 5, 9, 6, 10, 8, 12',
-		//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',
-		//'place' => 'if 12 is last in odds then favorite win',
+		'Place' => '12, 8',
+		'WP' => '11',
+	],
+	'2' => [
+		/**
+		Race 2
+		*/
+		'All Runners   '  =>  '2, 1, 4, 6, 9, 3, 10, 5, 11, 12, 7, 8',
+		'Place' => '12, 11, 7',
+	],
+	'3' => [
+		/**
+		Race 3
+		*/
+		'All Runners   '  =>  '4, 7, 3, 1, 9, 10, 6, 2, 11, 8, 5, 12',
+		'Place' => '12, 5',
+		'WP' => '4',
+	],
+	'4' => [
+		/**
+		Race 4
+		*/
+		'All Runners   '  =>  '2, 1, 6, 3, 9, 11, 8, 12, 4, 5, 7, 10',
+		'Place' => '12, 8, 4',
+	],
+	'5' => [
+		/**
+		Race 5
+		*/
+		'All Runners   '  =>  '3, 6, 4, 1, 11, 12, 9, 2, 7, 13, 10, 5, 8',
+		'Place' => '12, 11, 9',
+		//In first 6 runners!
 	],
 	'6' => [
 		/**
 		Race 6
 		*/
 		'All Runners   '  =>  '4, 5, 3, 11, 6, 12, 1, 8, 7, 2, 9, 10',
-		//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',
-		//'place' => 'if 12 is last in odds then favorite win',
+		'Place' => '12, 6, 1',
+		//In first 6 runners!
 	],
 	'7' => [
 		/**
 		Race 7
 		*/
 		'All Runners   '  =>  '3, 5, 2, 10, 7, 1, 11, 4, 6, 13, 14, 8, 9, 12',
-		//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',
-		//'place' => 'if 12 is last in odds then favorite win',
+		'Place' => '12, 9',
+		'WP' => '3',
 	],
 	'8' => [
 		/**
 		Race 8
 		*/
 		'All Runners   '  =>  '6, 5, 11, 4, 13, 7, 1, 3, 12, 9, 8, 10, 2, 14',
-		//'place' => '3 numbers: 12 and those with odds right lower and bigger than number 12s odds',
-		//'place' => 'if 12 is last in odds then favorite win',
+		'Place' => '12, 3, 9',
 	],
 ];
