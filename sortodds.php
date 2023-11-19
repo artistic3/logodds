@@ -59,6 +59,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($pos < 6){
             $racetext .= "\t\t//In first 6 runners!\n";
         }
+        if(isset($runners[$pos - 8])) {
+            $minus8 = $runners[$pos - 8];
+            $racetext .= "\t\t'Minus8' => '" . $minus8 .  "',\n";
+        }
     }
     
     $racetext .= "\t],\n";
