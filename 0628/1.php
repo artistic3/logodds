@@ -6,6 +6,9 @@ return [
 		Race 1
 		*/
 		'All Runners   '  =>  '1, 2, 3, 5, 7, 6, 4',
+		'Place'  => '7, 5, 6',
+		//In first 6 runners!
+		'places' => '7, 5, 6',
 	],
 	'2' => [
 		/**

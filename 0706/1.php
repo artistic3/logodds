@@ -6,7 +6,6 @@ return [
 		Race 1
 		*/
 		'All Runners   '  =>  '10, 2, 8, 1, 9, 5, 6, 3, 4, 12, 7',
-		'Place'  => '12, 4, 7',
 		'places' => '12, 4, 7',
 	],
 	'2' => [
@@ -14,6 +13,9 @@ return [
 		Race 2
 		*/
 		'All Runners   '  =>  '2, 4, 6, 5, 1, 3',
+		'Place'  => '6, 4, 5',
+		//In first 6 runners!
+		'places' => '6, 4, 5',
 	],
 	'3' => [
 		/**
@@ -29,6 +31,8 @@ return [
 		Race 4
 		*/
 		'All Runners   '  =>  '3, 7, 4, 2, 8, 5, 9, 11, 6, 1, 10',
+		'Place'  => '11, 9, 6',
+		'places' => '11, 9, 6',
 	],
 	'5' => [
 		/**
