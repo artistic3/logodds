@@ -50,14 +50,12 @@ return [
 		Race 7
 		*/
 		'All Runners   '  =>  '1, 8, 7, 2, 5, 6, 3, 4, 9, 10',
-		'Sure Place' => '9',
 	],
 	'8' => [
 		/**
 		Race 8
 		*/
 		'All Runners   '  =>  '2, 1, 4, 6, 3, 7, 5',
-		'Sure Place' => '9',
 	],
 	'9' => [
 		/**
@@ -66,7 +64,6 @@ return [
 		'All Runners   '  =>  '1, 9, 5, 6, 3, 2, 8, 12, 4, 7, 14, 10, 11, 13',
 		'Place'  => '12, 8, 4',
 		'places' => '12, 8, 4',
-		'Sure Place' => '9',
 	],
 	'10' => [
 		/**
@@ -76,6 +73,5 @@ return [
 		'Place'  => '12, 6, 7',
 		//In first 6 runners!
 		'places' => '12, 6, 7',
-		'Sure Place' => '9',
 	],
 ];

@@ -59,13 +59,11 @@ return [
 		Race 9
 		*/
 		'All Runners   '  =>  '1, 6, 4, 9, 5, 2, 10, 7',
-		'Sure Place' => '8',
 	],
 	'10' => [
 		/**
 		Race 10
 		*/
 		'All Runners   '  =>  '6, 1, 2, 10, 3, 7, 4, 8, 9, 5',
-		'Sure Place' => '8',
 	],
 ];

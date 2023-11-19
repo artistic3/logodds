@@ -85,6 +85,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     unset($places);
     unset($oldWPs);
     unset($wPs);
+    unset($oldSures);
+    unset($sures);
     $outtext .= $racetext;
 }
 

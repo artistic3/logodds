@@ -58,7 +58,6 @@ return [
 		'Place'  => '12, 5',
 		'places' => '12, 5',
 		'WP' => '4',
-		'Sure Place' => '2',
 	],
 	'8' => [
 		/**
@@ -68,7 +67,6 @@ return [
 		'Place'  => '12, 4',
 		'places' => '12, 4',
 		'WP' => '10',
-		'Sure Place' => '2',
 	],
 	'9' => [
 		/**
@@ -78,7 +76,6 @@ return [
 		'Place'  => '12, 13',
 		'places' => '12, 13',
 		'WP' => '3',
-		'Sure Place' => '2',
 	],
 	'10' => [
 		/**
@@ -88,7 +85,6 @@ return [
 		'Place'  => '12, 3, 5',
 		//In first 6 runners!
 		'places' => '12, 3, 5',
-		'Sure Place' => '2',
 	],
 	'11' => [
 		/**
@@ -98,6 +94,5 @@ return [
 		'Place'  => '12, 1',
 		'places' => '12, 1',
 		'WP' => '14',
-		'Sure Place' => '2',
 	],
 ];
