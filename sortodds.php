@@ -52,8 +52,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
 
     $first = $runners[0];
+    $size = count($runners);
 
-    $pos = array_search(12, $runners);
+    $pos = array_search($size, $runners);
     if($pos){
         $place = [$runners[$pos]];
         if(isset($runners[$pos - 1])) $place[] = $runners[$pos - 1];
