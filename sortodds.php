@@ -20,6 +20,17 @@ $outtext .= "return [\n";
 
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($allOdds[$raceNumber])) continue;
+
+    if(isset($oldData)){
+        if(isset($oldData[$raceNumber])){
+            $oldRaceData = $oldData[$raceNumber];
+            if(isset($oldRaceData['places'])) $oldPlaces = $oldRaceData['places'];
+        }
+    }
+
+    if(isset($oldPlaces)) $places = explode(", ", $oldPlaces);
+    else $places = [];
+
     $racetext = "";
     $tmpArray = $allOdds[$raceNumber];
     asort($tmpArray);
@@ -39,7 +50,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $place = [$runners[$pos]];
         if(isset($runners[$pos - 1])) $place[] = $runners[$pos - 1];
         if(isset($runners[$pos + 1])) $place[] = $runners[$pos + 1];
-        $racetext .= "\t\t'Place' => '" . implode(", ", $place).  "',\n";
+        $places = array_values(array_unique(array_merge($places, $place)));
+        $racetext .= "\t\t'Place'  => '" . implode(", ", $place).  "',\n";
+        $racetext .= "\t\t'places' => '" . implode(", ", $places).  "',\n";
         if($pos == count($runners) - 1){
             $racetext .= "\t\t'WP' => '" . $first .  "',\n";
         }
