@@ -25,11 +25,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(isset($oldData[$raceNumber])){
             $oldRaceData = $oldData[$raceNumber];
             if(isset($oldRaceData['places'])) $oldPlaces = $oldRaceData['places'];
+            if(isset($oldRaceData['WP'])) $oldWPs = $oldRaceData['WP'];
         }
     }
 
     if(isset($oldPlaces)) $places = explode(", ", $oldPlaces);
     else $places = [];
+
+    if(isset($oldWPs)) $wps = explode(", ", $oldWPs);
+    else $wps = [];
 
     $racetext = "";
     $tmpArray = $allOdds[$raceNumber];
@@ -54,7 +58,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'Place'  => '" . implode(", ", $place).  "',\n";
         $racetext .= "\t\t'places' => '" . implode(", ", $places).  "',\n";
         if($pos == count($runners) - 1){
-            $racetext .= "\t\t'WP' => '" . $first .  "',\n";
+            if(!in_array($first, $wps)) $wps[] = $first;
+            $racetext .= "\t\t'WP' => '" . implode(", ", $wps) .  "',\n";
         }
         if($pos < 6){
             $racetext .= "\t\t//In first 6 runners!\n";
