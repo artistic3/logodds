@@ -51,19 +51,21 @@ return [
 		*/
 		'All Runners   '  =>  '8, 5, 10, 1, 11, 4, 3, 2, 12, 9',
 		'Place'  => '12, 2, 9',
-		'Minus8' => '8',
 		'places' => '12, 2, 9',
+		'Sure Place' => '8',
 	],
 	'9' => [
 		/**
 		Race 9
 		*/
 		'All Runners   '  =>  '1, 6, 4, 9, 5, 2, 10, 7',
+		'Sure Place' => '8',
 	],
 	'10' => [
 		/**
 		Race 10
 		*/
 		'All Runners   '  =>  '6, 1, 2, 10, 3, 7, 4, 8, 9, 5',
+		'Sure Place' => '8',
 	],
 ];

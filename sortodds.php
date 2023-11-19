@@ -26,6 +26,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $oldRaceData = $oldData[$raceNumber];
             if(isset($oldRaceData['places'])) $oldPlaces = $oldRaceData['places'];
             if(isset($oldRaceData['WP'])) $oldWPs = $oldRaceData['WP'];
+            if(isset($oldRaceData['Sure Place'])) $oldSures = $oldRaceData['Sure Place'];
         }
     }
 
@@ -34,6 +35,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 
     if(isset($oldWPs)) $wps = explode(", ", $oldWPs);
     else $wps = [];
+
+    if(isset($oldSures)) $sures = explode(", ", $oldSures);
+    else $sures = [];
 
     $racetext = "";
     $tmpArray = $allOdds[$raceNumber];
@@ -64,7 +68,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
         if(isset($runners[$pos - 8])) {
             $minus8 = $runners[$pos - 8];
-            $racetext .= "\t\t'Minus8' => '" . $minus8 .  "',\n";
+            if($minus8 == $first && !in_array($minus8, $sures)) $sures[] = $minus8;
         }
     }
     if(!empty($places)){
@@ -72,6 +76,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     if(!empty($wps)){
         $racetext .= "\t\t'WP' => '" . implode(", ", $wps) .  "',\n";
+    }
+    if(!empty($sures)){
+        $racetext .= "\t\t'Sure Place' => '" . implode(", ", $sures) .  "',\n";
     }
     $racetext .= "\t],\n";
     unset($oldPlaces);
