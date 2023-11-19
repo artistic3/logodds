@@ -59,7 +59,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'places' => '" . implode(", ", $places).  "',\n";
         if($pos == count($runners) - 1){
             if(!in_array($first, $wps)) $wps[] = $first;
-            $racetext .= "\t\t'WP' => '" . implode(", ", $wps) .  "',\n";
         }
         if($pos < 6){
             $racetext .= "\t\t//In first 6 runners!\n";
@@ -69,8 +68,14 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $racetext .= "\t\t'Minus8' => '" . $minus8 .  "',\n";
         }
     }
-    
+    if(!empty($wps)){
+        $racetext .= "\t\t'WP' => '" . implode(", ", $wps) .  "',\n";
+    }
     $racetext .= "\t],\n";
+    unset($oldPlaces);
+    unset($places);
+    unset($oldWPs);
+    unset($wPs);
     $outtext .= $racetext;
 }
 
