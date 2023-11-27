@@ -42,6 +42,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t*/\n";
 
     $racetext .= "\t\t'All Runners   '  =>  '" . implode(", ", $runners).  "',\n";
+    $racetext .= "\t\t'Total Runners '  =>  " . count($runners).  ",\n";
 
     $first = $runners[0];
     $size = count($runners);
@@ -55,9 +56,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $places = array_values(array_unique(array_merge($places, $place)));
         if($pos == count($runners) - 1){
             $racetext .= "\t\t'WP' => '" . $first .  "',\n";
-        }
-        if($pos == count($runners) - 2){
-            $racetext .= "\t\t'Maybe WP' => '" . $first .  "',\n";
         }
         if($pos < 6){
             $racetext .= "\t\t//In first 6 runners!\n";
@@ -80,6 +78,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'places4' => '" . implode(", ", $places4).  "',\n";
     }
     
+    for($k = $size; $k > floor($size / 2); $k --)
+    {
+        $posK = array_search($k, $runners);
+        if($posK + 1 == $k && isset($runners[$size - 1 - $posK])){
+           $racetext .= "\t\t'candidate(". "k = $k)" . "' => '" . $runners[$size - 1 - $posK] .  "',\n";
+        }
+    }
     $racetext .= "\t],\n";
     unset($oldPlaces);
     unset($places);
