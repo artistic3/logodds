@@ -57,9 +57,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if($pos == count($runners) - 1){
             $racetext .= "\t\t'WP' => '" . $first .  "',\n";
         }
-        if($pos < 6){
-            $racetext .= "\t\t//In first 6 runners!\n";
-        }
     }
 
     //1. Sort  places by odds
