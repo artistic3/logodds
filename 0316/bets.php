@@ -42,7 +42,6 @@ return [
 		Race 5
 		*/
 		'favorites' => '10, 4',
-		'additional favorites' => '8',
 		'Fav 10' => '2, 4, 11',
 		'Fav 4' => '1, 2, 3, 4, 6, 7',
 		'union' => '1, 2, 3, 4, 6, 7, 11',//count: 7
@@ -53,7 +52,6 @@ return [
 		Race 6
 		*/
 		'favorites' => '12, 2, 6',
-		'additional favorites' => '8',
 		'Fav 12' => '1, 11, 12',
 		'Fav 2' => '2, 3, 4, 5, 8, 10',
 		'Fav 8' => '3, 8, 12',
@@ -65,7 +63,6 @@ return [
 		Race 7
 		*/
 		'favorites' => '6, 4',
-		'additional favorites' => '8',
 		'Fav 6' => '6, 10',
 		'Fav 8' => '2, 8, 9',
 		'union' => '2, 6, 8, 9, 10',//count: 5
@@ -75,7 +72,6 @@ return [
 		Race 8
 		*/
 		'favorites' => '7, 1',
-		'additional favorites' => '8',
 		'Fav 7' => '1, 2, 3, 4, 5',
 		'Fav 1' => '1, 5, 6, 7, 11',
 		'union' => '1, 2, 3, 4, 5, 6, 7, 11',//count: 8
@@ -86,7 +82,6 @@ return [
 		Race 9
 		*/
 		'favorites' => '5',
-		'additional favorites' => '8',
 		'Fav 5' => '3, 4, 5, 8, 11, 12',
 		'Fav 8' => '1, 5, 8',
 		'union' => '1, 3, 4, 5, 8, 11, 12',//count: 7
@@ -97,7 +92,6 @@ return [
 		Race 10
 		*/
 		'favorites' => '9, 7, 14',
-		'additional favorites' => '8',
 		'Fav 7' => '7, 8, 11, 12',
 		'Fav 8' => '7, 8',
 		'union' => '7, 8, 11, 12',//count: 4
