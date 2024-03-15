@@ -42,7 +42,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(!in_array($favorite, $favorites)) $favorites[] = $favorite;
     }
     else{
-        if(!in_array($favorite, $addedFavorites)) $addedFavorites[] = $favorite;
+        if(!in_array($favorite, $addedFavorites) && !in_array($favorite, $favorites)) $addedFavorites[] = $favorite;
     }
     sort($runners);
     $racetext = "";

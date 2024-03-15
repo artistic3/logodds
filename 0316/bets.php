@@ -28,7 +28,6 @@ return [
 		Race 4
 		*/
 		'favorites' => '11, 1, 6',
-		'additional favorites' => '6',
 		'Fav 11' => '6, 11, 12',
 		'Fav 6' => '4, 5, 6, 10, 11, 12',
 		'union' => '4, 5, 6, 10, 11, 12',//count: 6
@@ -46,7 +45,6 @@ return [
 		Race 6
 		*/
 		'favorites' => '12, 2, 6',
-		'additional favorites' => '2',
 		'Fav 12' => '1, 11, 12',
 		'Fav 2' => '2, 3, 4, 5, 8, 10',
 		'union' => '1, 2, 3, 4, 5, 8, 10, 11, 12',//count: 9
