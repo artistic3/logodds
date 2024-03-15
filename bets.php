@@ -45,15 +45,18 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     foreach($favorites as $one){
         if(isset($history[$raceNumber][$one]['win'])){
             $winners = $history[$raceNumber][$one]['win'];
-            if(count($winners) > 6) continue;
-            
+            if(count($winners) > 6 || count($winners) < 2) continue;
             $sets[$one] = $winners;
         } 
     }
-    if(count($sets) === 1){
+    if(count($sets) >= 1){
+        $union = [];
         foreach($sets as $f => $s){
-            $racetext .= "\t\t'Fav $f' => '" . implode(", ", $s) . "',//count: " . count($s) . "\n";
+            $union = array_values(array_unique(array_merge($union, $s)));
+            $racetext .= "\t\t'Fav $f' => '" . implode(", ", $s) . "',\n";
         }
+        sort($union);
+        $racetext .= "\t\t'union' => '" . implode(", ", $union) . "',//count: " . count($union) . "\n";
     }
     $racetext .= "\t],\n";
     unset($oldFavorites);
