@@ -54,6 +54,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!empty($addedFavorites))  {
         $racetext .= "\t\t'additional favorites' => '" . implode(", ", $addedFavorites) . "',\n"; 
     }
+    $favorites = array_merge($favorites, $addedFavorites);
     foreach($favorites as $one){
         if(isset($history[$raceNumber][$one]['win'])){
             $winners = $history[$raceNumber][$one]['win'];
@@ -69,6 +70,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
         sort($union);
         $racetext .= "\t\t'union' => '" . implode(", ", $union) . "',//count: " . count($union) . "\n";
+        if(count($union) > 6 && count($favorites) < 6){
+            $racetext .= "\t\t'win/qin' => '" . implode(", ", $favorites) . "',\n";
+        }
     }
     $racetext .= "\t],\n";
     unset($oldFavorites);
