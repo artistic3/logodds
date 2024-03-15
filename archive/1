@@ -1,3 +1,0 @@
-php getodds.php 1206 HV 9;
-php placeodds.php 1206 HV 9;
-php sortodds.php 1206

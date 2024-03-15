@@ -1,6 +1,6 @@
 <?php
 
-$currentYear = "2023";
+$currentYear = "2024";
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 else {
@@ -23,7 +23,7 @@ if (!file_exists($outDir)) {
     mkdir($outDir, 0777, true);
 }
 
-$outFile =$outDir . DIRECTORY_SEPARATOR . "getodds.php";
+$outFile =$outDir . DIRECTORY_SEPARATOR . "odds.php";
 
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
@@ -42,7 +42,7 @@ for($r = 1; $r <= $totalRaces; $r++){
     $odds = $odds["OUT"];
 
     $pos = strpos($odds, "#PLA");
-    $odds = substr($odds, 0, $pos);
+    $odds = substr($odds, $pos, strlen($odds));
 
     $odds = explode(";",$odds);
 
@@ -60,5 +60,3 @@ for($r = 1; $r <= $totalRaces; $r++){
 $outtext .= "];\n";
 
 file_put_contents($outFile, $outtext);
-
-
