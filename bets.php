@@ -77,6 +77,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t],\n";
     unset($oldFavorites);
     unset($favorites);
+    unset($oldAddedFavorites);
+    unset($addedFavorites);
     $outtext .= $racetext;
 }
 $outtext .= "];\n";
