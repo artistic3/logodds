@@ -69,7 +69,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
         sort($union);
         $racetext .= "\t\t'union' => '" . implode(", ", $union) . "',//count: " . count($union) . "\n";
-        if(count($union) > 6 && count($favorites) < 6){
+        if(count($union) > 7 && count($favorites) < 6){
             $racetext .= "\t\t'win/qin' => '" . implode(", ", $favorites) . "',\n";
         }
         $place = array_slice($union, 0, 2);
