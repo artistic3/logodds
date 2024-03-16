@@ -32,7 +32,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     else $addedFavorites = [];
 
     $sets = [];
-    $setsUnder6 = [];
 
     $winsArray = $allRacesOdds[$raceNumber];
     asort($winsArray);
