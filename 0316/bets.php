@@ -33,7 +33,7 @@ return [
 		*/
 		'favorites' => '11, 1, 6',
 		'additional favorites' => '8',
-		'Fav 11' => '6, 11, 12',
+		'Fav 11' => '6, 10, 11, 12',
 		'Fav 6' => '4, 5, 6, 10, 11, 12',
 		'union' => '4, 5, 6, 10, 11, 12',//count: 6
 		'place' => '4, 5',
