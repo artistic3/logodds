@@ -72,8 +72,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(count($union) > 7 && count($favorites) < 6){
             $racetext .= "\t\t'win' => '" . implode(", ", $favorites) . "',\n";
         }
-        $place = array_slice($union, 0, 2);
-        $racetext .= "\t\t'place' => '" . implode(", ", $place) . "',\n";
     }
     $racetext .= "\t],\n";
     unset($oldFavorites);
