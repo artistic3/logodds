@@ -76,7 +76,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $racetext .= "\t\t'win' => '" . implode(", ", $favorites) . "',\n";
         }
     }
-    $racetext .= "\t\t'sures' => '" . implode(", ", $sures) . "',\n"    $racetext .= "\t],\n";
+    $racetext .= "\t\t'sures' => '" . implode(", ", $sures) . "',\n";
+    $racetext .= "\t],\n";
     unset($oldFavorites);
     unset($favorites);
     unset($oldAddedFavorites);
