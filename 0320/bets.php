@@ -21,15 +21,18 @@ return [
 		/**
 		Race 3
 		*/
-		'favorites' => '3, 8',
+		'favorites' => '3, 8, 10',
+		'Fav 10' => '4, 9',
+		'union' => '4, 9',//count: 2
 	],
 	'4' => [
 		/**
 		Race 4
 		*/
-		'favorites' => '4',
+		'favorites' => '4, 11',
 		'Fav 4' => '3, 4, 9, 11, 12',
-		'union' => '3, 4, 9, 11, 12',//count: 5
+		'Fav 11' => '6, 10, 11, 12',
+		'union' => '3, 4, 6, 9, 10, 11, 12',//count: 7
 	],
 	'5' => [
 		/**
@@ -71,7 +74,7 @@ return [
 		Race 9
 		*/
 		'favorites' => '7, 5, 11',
-		'additional favorites' => '3',
+		'additional favorites' => '3, 10',
 		'Fav 7' => '6, 9, 12',
 		'Fav 11' => '3, 9, 12',
 		'union' => '3, 6, 9, 12',//count: 4
