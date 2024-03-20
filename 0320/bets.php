@@ -6,8 +6,6 @@ return [
 		Race 1
 		*/
 		'favorites' => '6, 10',
-		'Fav 6' => '1, 2, 6, 7, 9, 11',
-		'union' => '1, 2, 6, 7, 9, 11',//count: 6
 		'sures1' => '1, 5',
 		'sures2' => '2, 6',
 	],
