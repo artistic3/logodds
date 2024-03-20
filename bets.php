@@ -53,7 +53,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!empty($addedFavorites))  {
         $racetext .= "\t\t'additional favorites' => '" . implode(", ", $addedFavorites) . "',\n"; 
     }
-    //$favorites = array_merge($favorites, $addedFavorites);
+    $favorites = array_merge($favorites, $addedFavorites);
     $sures1 = [];
     $sures2 = [];
     foreach($favorites as $one){
