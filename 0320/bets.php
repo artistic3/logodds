@@ -14,16 +14,12 @@ return [
 		Race 2
 		*/
 		'favorites' => '5, 2',
-		'Fav 5' => '5, 10',
-		'union' => '5, 10',//count: 2
 	],
 	'3' => [
 		/**
 		Race 3
 		*/
 		'favorites' => '3, 8, 10',
-		'Fav 10' => '4, 9',
-		'union' => '4, 9',//count: 2
 	],
 	'4' => [
 		/**
@@ -57,9 +53,6 @@ return [
 		Race 7
 		*/
 		'favorites' => '6, 11',
-		'Fav 6' => '6, 10, 11',
-		'Fav 11' => '5, 6',
-		'union' => '5, 6, 10, 11',//count: 4
 	],
 	'8' => [
 		/**
@@ -75,8 +68,5 @@ return [
 		*/
 		'favorites' => '7, 5, 11',
 		'additional favorites' => '3, 10',
-		'Fav 7' => '6, 9, 12',
-		'Fav 11' => '3, 9, 12',
-		'union' => '3, 6, 9, 12',//count: 4
 	],
 ];
