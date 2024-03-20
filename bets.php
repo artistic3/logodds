@@ -56,8 +56,11 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $favorites = array_merge($favorites, $addedFavorites);
     $sures = [];
     foreach($favorites as $one){
-        $secret = abs($raceNumber - $one + 4);
-        $sures[] = $secret;
+        $secret = $raceNumber - $one + 4;
+        if($secret > 0){
+            $sures[] = $secret;
+            $sures[] = $secret + 1;
+        }
         if(isset($history[$raceNumber][$one]['win'])){
             $winners = $history[$raceNumber][$one]['win'];
             //if(count($winners) > 6 || count($winners) < 3) continue;
