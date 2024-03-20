@@ -57,7 +57,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     foreach($favorites as $one){
         if(isset($history[$raceNumber][$one]['win'])){
             $winners = $history[$raceNumber][$one]['win'];
-            if(count($winners) > 7 || count($winners) < 3) continue;
+            if(count($winners) > 6 || count($winners) < 3) continue;
             $sets[$one] = $winners;
         } 
     }
