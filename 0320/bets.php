@@ -16,6 +16,7 @@ return [
 		Race 2
 		*/
 		'favorites' => '5, 2, 7',
+		'additional favorites' => '4',
 		'sures1' => '1, 4, 1',
 		'sures2' => '2, 5, 2',
 	],
