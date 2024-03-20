@@ -54,12 +54,10 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'additional favorites' => '" . implode(", ", $addedFavorites) . "',\n"; 
     }
     $favorites = array_merge($favorites, $addedFavorites);
-    $sures1 = [];
-    $sures2 = [];
+    $sures = [];
     foreach($favorites as $one){
         $secret = abs($raceNumber - $one + 4);
-        $sures1[] = $secret;
-        $sures2[] = $secret + 1;
+        $sures[] = $secret;
         if(isset($history[$raceNumber][$one]['win'])){
             $winners = $history[$raceNumber][$one]['win'];
             //if(count($winners) > 6 || count($winners) < 3) continue;
@@ -78,15 +76,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $racetext .= "\t\t'win' => '" . implode(", ", $favorites) . "',\n";
         }
     }
-    $racetext .= "\t\t'sures1' => '" . implode(", ", $sures1) . "',\n";
-    $racetext .= "\t\t'sures2' => '" . implode(", ", $sures2) . "',\n";
-    $racetext .= "\t],\n";
+    $racetext .= "\t\t'sures' => '" . implode(", ", $sures) . "',\n"    $racetext .= "\t],\n";
     unset($oldFavorites);
     unset($favorites);
     unset($oldAddedFavorites);
     unset($addedFavorites);
-    unset($sures1);
-    unset($sures2);
+    unset($sures);
     $outtext .= $racetext;
 }
 $outtext .= "];\n";
