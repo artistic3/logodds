@@ -53,7 +53,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!empty($addedFavorites))  {
         $racetext .= "\t\t'additional favorites' => '" . implode(", ", $addedFavorites) . "',\n"; 
     }
-    $favorites = array_merge($favorites, $addedFavorites);
+    //$favorites = array_merge($favorites, $addedFavorites);
+    $max = max($favorites);
     $sures = [];
     foreach($favorites as $one){
         $secret = $raceNumber - $one + 4;
@@ -67,29 +68,26 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $sets[$one] = $winners;
         } 
     }
-    if(count($sets) >= 1){
-        $union = [];
-        foreach($sets as $f => $s){
-            $union = array_values(array_unique(array_merge($union, $s)));
+    $union = [];
+    foreach($sets as $f => $s){
+        $union = array_values(array_unique(array_merge($union, $s)));
+        if($f == $max){
             $racetext .= "\t\t'Fav $f' => '" . implode(", ", $s) . "',\n";
-        }
-        sort($union);
-        $racetext .= "\t\t'union' => '" . implode(", ", $union) . "',//count: " . count($union) . "\n";
-        if(count($union) <= 10 && count($union) >= 7){
-            $racetext .= "\t\t'win' => '" . implode(", ", $favorites) . "',\n";
+            $toWin = array_intersect($s, $sures);
+            if(count($toWin) >= 2){
+                $racetext .= "\t\t'place' => '" . implode(", ", $toWin) . "',\n";
+            }
+            else{
+                $racetext .= "\t\t'wp' => '" . implode(", ", $favorites) . "',\n";   
+            }
         }
     }
+    sort($union);
+    $racetext .= "\t\t'union' => '" . implode(", ", $union) . "',//count: " . count($union) . "\n";
+    $sures = array_values(array_unique($sures));
+    sort($sures);
     $racetext .= "\t\t'sures' => '" . implode(", ", $sures) . "',\n";
-    $shit = [];
-    foreach($favorites as $one){
-        if(in_array($one - 2, $runners) && !in_array($one - 2, $shit)) $shit[] = $one - 2;
-        if(in_array($one - 1, $runners) && !in_array($one - 1, $shit)) $shit[] = $one - 1;
-        if(in_array($one, $runners) && !in_array($one, $shit)) $shit[] = $one;
-        if(in_array($one + 1, $runners) && !in_array($one + 1, $shit)) $shit[] = $one + 1;
-        if(in_array($one + 2, $runners) && !in_array($one + 2, $shit)) $shit[] = $one + 2;
-    }
-    sort($shit);
-    $racetext .= "\t\t'shit' => '" . implode(", ", $shit) . "',//count: " . count($shit) . "\n";
+    
     $racetext .= "\t],\n";
     unset($oldFavorites);
     unset($favorites);
