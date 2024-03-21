@@ -80,6 +80,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
     }
     $racetext .= "\t\t'sures' => '" . implode(", ", $sures) . "',\n";
+    $shit = [];
+    foreach($favorites as $one){
+        if(in_array($one - 2, $runners) && !in_array($one - 2, $shit)) $shit[] = $one - 2;
+        if(in_array($one - 1, $runners) && !in_array($one - 1, $shit)) $shit[] = $one - 1;
+        if(in_array($one, $runners) && !in_array($one, $shit)) $shit[] = $one;
+        if(in_array($one + 1, $runners) && !in_array($one + 1, $shit)) $shit[] = $one + 1;
+        if(in_array($one + 2, $runners) && !in_array($one + 2, $shit)) $shit[] = $one + 2;
+    }
+    sort($shit);
+    $racetext .= "\t\t'shit' => '" . implode(", ", $shit) . "',//count: " . count($shit) . "\n";
     $racetext .= "\t],\n";
     unset($oldFavorites);
     unset($favorites);
