@@ -72,7 +72,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     foreach($sets as $f => $s){
         $union = array_values(array_unique(array_merge($union, $s)));
         if($f == $max){
-            $racetext .= "\t\t'Fav $f' => '" . implode(", ", $s) . "',\n";
+            if(count($s) > 3 && count($s) < 8){
+                $racetext .= "\t\t'Fav $f(win)' => '" . implode(", ", $s) . "',\n";
+            }
             $toWin = array_intersect($s, $sures);
             if(count($toWin) >= 2){
                 $racetext .= "\t\t'place' => '" . implode(", ", $toWin) . "',\n";
