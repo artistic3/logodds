@@ -9,6 +9,7 @@ $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 $allRacesOdds = include($currentDir . DIRECTORY_SEPARATOR . "odds.php");
 $history = include(__DIR__ . DIRECTORY_SEPARATOR . "winhistory.php");
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "$step.php";
+$newFile = $currentDir . DIRECTORY_SEPARATOR . "winplace.php";
 
 if(file_exists($outFile)){
     $oldData = include($outFile);
@@ -16,11 +17,16 @@ if(file_exists($outFile)){
 
 $totalRaces = count($allRacesOdds);
 
+$globals = [];
+
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
 
+$shit = [];
+
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($allRacesOdds[$raceNumber])) continue;
+    $globals[$raceNumber] = [];
     if(isset($oldData)){
         if(isset($oldData[$raceNumber]['favorites'])) $oldFavorites = explode(", ", $oldData[$raceNumber]['favorites']);
         if(isset($oldData[$raceNumber]['additional favorites'])) $oldAddedFavorites = explode(", ", $oldData[$raceNumber]['additional favorites']);
@@ -53,50 +59,51 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!empty($addedFavorites))  {
         $racetext .= "\t\t'additional favorites' => '" . implode(", ", $addedFavorites) . "',\n"; 
     }
-    //$favorites = array_merge($favorites, $addedFavorites);
-    $max = max($favorites);
-    $sures = [];
+    $favorites = array_merge($favorites, $addedFavorites);
+    $globals[$raceNumber]['favorites'] = $favorites;
     foreach($favorites as $one){
-        $secret = $raceNumber - $one + 4;
-        if($secret > 0){
-            $sures[] = $secret;
-            $sures[] = $secret + 1;
-        }
         if(isset($history[$raceNumber][$one]['win'])){
-            $winners = $history[$raceNumber][$one]['win'];
+            $winners = array_intersect($history[$raceNumber][$one]['win'], $runners);
             $sets[$one] = $winners;
         } 
     }
-    $union = [];
-    $place = [];
     foreach($sets as $f => $s){
-        $union = array_values(array_unique(array_merge($union, $s)));
-        if($f == $max){
-            if(count($s) > 3 && count($s) < 8){
-                $racetext .= "\t\t'Fav $f(win)' => '" . implode(", ", $s) . "',\n";
-                $place = array_values(array_unique(array_merge($place, array_intersect($favorites, $s))));
-            }
-            $toWin = array_intersect($s, $sures);
-            if(count($toWin) >= 2){
-                $racetext .= "\t\t'place2' => '" . implode(", ", $toWin) . "',\n";
-            }
-            else{
-                $racetext .= "\t\t'wp' => '" . implode(", ", $favorites) . "',\n";   
-            }
+        if(in_array(3, $s) && in_array(4, $s) && in_array(5, $s)){
+            $racetext .= "\t\t'Fav $f(win)' => '" . implode(", ", $s) . "',//count: " . count($s) . "\n";
+            $globals[$raceNumber]['win'] = $s;
+            if(!in_array($f, $shit)) $shit[] = $f;
         }
     }
-    if(!empty($place))
-    $racetext .= "\t\t'place' => '" . implode(", ", $place) . "',\n";
-    
     $racetext .= "\t],\n";
     unset($oldFavorites);
     unset($favorites);
     unset($oldAddedFavorites);
     unset($addedFavorites);
-    unset($sures);
-    unset($place);
     $outtext .= $racetext;
 }
+sort($shit);
+$outtext .= "\t\t//'shit' => '" . implode(", ", $shit) . "',\n"; 
 $outtext .= "];\n";
-
 file_put_contents($outFile, $outtext);
+
+$newtext = "<?php\n\n";
+$newtext .= "return [\n";
+for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
+    $racetext = "";
+    $racetext .= "\t'$raceNumber' => [\n";
+    $racetext .= "\t\t/**\n";
+    $racetext .= "\t\tRace $raceNumber\n";
+    $racetext .= "\t\t*/\n";
+    $place = array_intersect($globals[$raceNumber]['favorites'], $shit);
+    if(!empty($place)){
+        $racetext .= "\t\t'wp' => '" . implode(", ", $place) . "',\n"; 
+    }
+    if(isset($globals[$raceNumber]['win'])){
+        $racetext .= "\t\t'win' => '" . implode(", ", $globals[$raceNumber]['win']) . "',\n"; 
+    }
+    $racetext .= "\t],\n";
+    $newtext .= $racetext;
+}
+$newtext .= "];\n";
+file_put_contents($newFile, $newtext);
+
