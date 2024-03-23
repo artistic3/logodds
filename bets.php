@@ -89,6 +89,7 @@ file_put_contents($outFile, $outtext);
 $newtext = "<?php\n\n";
 $newtext .= "return [\n";
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
+    if(!isset($globals[$raceNumber]['win'])) continue;
     $racetext = "";
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
