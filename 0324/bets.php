@@ -42,7 +42,8 @@ return [
 		/**
 		Race 7
 		*/
-		'favorites' => '7',
+		'favorites' => '7, 2',
+		'Fav 2(win)' => '1, 2, 3, 4, 5, 6, 7, 9',//count: 8
 	],
 	'8' => [
 		/**
@@ -63,5 +64,5 @@ return [
 		*/
 		'favorites' => '2',
 	],
-	//'shit' => '6, 11',
+	//'shit' => '2, 6, 11',
 ];
