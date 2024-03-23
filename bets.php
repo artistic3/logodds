@@ -68,7 +68,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         } 
     }
     foreach($sets as $f => $s){
-        if(in_array(3, $s) && in_array(4, $s) && in_array(5, $s)){
+        if(in_array(3, $s) && in_array(5, $s)){
             $racetext .= "\t\t'Fav $f(win)' => '" . implode(", ", $s) . "',//count: " . count($s) . "\n";
             $globals[$raceNumber]['win'] = $s;
             if(!in_array($f, $shit)) $shit[] = $f;

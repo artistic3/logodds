@@ -55,6 +55,7 @@ return [
 		Race 9
 		*/
 		'favorites' => '11',
+		'Fav 11(win)' => '3, 5, 9, 12',//count: 4
 	],
 	'10' => [
 		/**
@@ -62,5 +63,5 @@ return [
 		*/
 		'favorites' => '2',
 	],
-		//'shit' => '6',
+		//'shit' => '6, 11',
 ];
