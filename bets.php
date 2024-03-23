@@ -82,7 +82,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $outtext .= $racetext;
 }
 sort($shit);
-$outtext .= "\t\t//'shit' => '" . implode(", ", $shit) . "',\n"; 
+$outtext .= "\t//'shit' => '" . implode(", ", $shit) . "',\n"; 
 $outtext .= "];\n";
 file_put_contents($outFile, $outtext);
 
