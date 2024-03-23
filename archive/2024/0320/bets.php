@@ -39,6 +39,7 @@ return [
 		Race 6
 		*/
 		'favorites' => '3, 12',
+		'Fav 3(win)' => '1, 2, 3, 5, 7, 9, 11',//count: 7
 	],
 	'7' => [
 		/**
@@ -60,6 +61,9 @@ return [
 		'favorites' => '7, 5, 11',
 		'additional favorites' => '3, 10',
 		'Fav 5(win)' => '3, 4, 5, 8, 10, 11, 12',//count: 7
+		'Fav 11(win)' => '3, 5, 9, 12',//count: 4
+		'Fav 3(win)' => '2, 3, 5, 8, 9, 10, 11',//count: 7
+		'Fav 10(win)' => '1, 3, 5, 6, 10, 11',//count: 6
 	],
-		//'shit' => '4, 5, 10',
+	//'shit' => '3, 4, 5, 10, 11',
 ];
