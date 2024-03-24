@@ -119,6 +119,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!empty($wp) && !empty($globals[$raceNumber]['place'])){
         $qqpl = array_values(array_unique(array_merge($wp, $globals[$raceNumber]['place'])));
         if(count($qqpl) >= 3){
+            sort($qqpl);
             $racetext .= "\t\t'qqpl' => '" . implode(", ", $qqpl) . "',\n"; 
         }
     }
