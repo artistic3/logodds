@@ -7,7 +7,7 @@ return [
 		*/
 		'favorites' => '5',
 		'win hist(Fav 5)' => '1, 5, 7, 8, 9, 12',//count: 6
-		'fibo seq(Fav 5)' => '1, 5, 8',//count: 3
+		'fibo seq(Fav 5)' => '1, 5, 8',
 	],
 	'2' => [
 		/**
@@ -15,7 +15,7 @@ return [
 		*/
 		'favorites' => '2, 1, 14',
 		'win hist(Fav 2)' => '2, 4, 5, 6, 7, 8, 9, 12, 13',//count: 9
-		'fibo seq(Fav 2)' => '2, 5, 8, 13',//count: 4
+		'fibo seq(Fav 2)' => '2, 5, 8, 13',
 	],
 	'3' => [
 		/**
@@ -23,7 +23,7 @@ return [
 		*/
 		'favorites' => '6',
 		'win hist(Fav 6)' => '1, 3, 4, 5, 12',//count: 5
-		'fibo seq(Fav 6)' => '1, 3, 5',//count: 3
+		'fibo seq(Fav 6)' => '1, 3, 5',
 	],
 	'4' => [
 		/**
@@ -37,9 +37,9 @@ return [
 		*/
 		'favorites' => '1, 2, 10',
 		'win hist(Fav 2)' => '1, 2, 7, 8, 9',//count: 5
-		'fibo seq(Fav 2)' => '1, 2, 8',//count: 3
+		'fibo seq(Fav 2)' => '1, 2, 8',
 		'win hist(Fav 10)' => '1, 2, 3, 4, 11',//count: 5
-		'fibo seq(Fav 10)' => '1, 2, 3',//count: 3
+		'fibo seq(Fav 10)' => '1, 2, 3',
 	],
 	'6' => [
 		/**
@@ -47,7 +47,7 @@ return [
 		*/
 		'favorites' => '1, 12',
 		'win hist(Fav 1)' => '1, 3, 7, 9, 12, 13',//count: 6
-		'fibo seq(Fav 1)' => '1, 3, 13',//count: 3
+		'fibo seq(Fav 1)' => '1, 3, 13',
 	],
 	'7' => [
 		/**
@@ -55,7 +55,7 @@ return [
 		*/
 		'favorites' => '7, 2, 5',
 		'win hist(Fav 2)' => '1, 2, 3, 4, 5, 6, 7, 9',//count: 8
-		'fibo seq(Fav 2)' => '1, 2, 3, 5',//count: 4
+		'fibo seq(Fav 2)' => '1, 2, 3, 5',
 	],
 	'8' => [
 		/**
@@ -69,9 +69,9 @@ return [
 		*/
 		'favorites' => '11, 1, 2',
 		'win hist(Fav 1)' => '1, 5, 6, 7, 8, 10, 12',//count: 7
-		'fibo seq(Fav 1)' => '1, 5, 8',//count: 3
+		'fibo seq(Fav 1)' => '1, 5, 8',
 		'win hist(Fav 2)' => '2, 3, 4, 5, 6, 11',//count: 6
-		'fibo seq(Fav 2)' => '2, 3, 5',//count: 3
+		'fibo seq(Fav 2)' => '2, 3, 5',
 	],
 	'10' => [
 		/**
@@ -79,7 +79,7 @@ return [
 		*/
 		'favorites' => '2, 8',
 		'win hist(Fav 2)' => '2, 3, 13',//count: 3
-		'fibo seq(Fav 2)' => '2, 3, 13',//count: 3
+		'fibo seq(Fav 2)' => '2, 3, 13',
 	],
 		//'shit' => '1, 2, 5, 6, 10',
 ];

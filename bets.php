@@ -76,7 +76,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $fibo = array_intersect($s,$fibonacci);
         if(count($fibo) >= 3){
             $racetext .= "\t\t'win hist(Fav $f)' => '" . implode(", ", $s) . "',//count: " . count($s) . "\n";
-            $racetext .= "\t\t'fibo seq(Fav $f)' => '" . implode(", ", $fibo) . "',//count: " . count($fibo) . "\n";
+            $racetext .= "\t\t'fibo seq(Fav $f)' => '" . implode(", ", $fibo) . "',\n";
             $union = array_values(array_unique(array_merge($union, $s)));
             if(!in_array($f, $shit)) $shit[] = $f;
         }
@@ -113,7 +113,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'wp' => '" . implode(", ", $wp) . "',\n"; 
     }
     if(isset($globals[$raceNumber]['win'])){
-        $racetext .= "\t\t'win' =>   '" . implode(", ", $globals[$raceNumber]['win']) . "',\n"; 
+        $racetext .= "\t\t'win' =>   '" . implode(", ", $globals[$raceNumber]['win']) . "',//count: " . count($globals[$raceNumber]['win']) . "\n"; 
         $racetext .= "\t\t'place' => '" . implode(", ", $globals[$raceNumber]['place']) . "',\n"; 
     }
     $racetext .= "\t],\n";
