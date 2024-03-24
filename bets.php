@@ -2,6 +2,8 @@
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
+$fibonacci = [1, 2, 3, 5, 8, 13, 21];
+
 $step = "bets";
 $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
@@ -67,22 +69,33 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $sets[$one] = $winners;
         } 
     }
+    $union = [];
+    $globals[$raceNumber]['place'] = [];
     foreach($sets as $f => $s){
-        if(in_array(3, $s) && in_array(5, $s)){
-            $racetext .= "\t\t'Fav $f(win)' => '" . implode(", ", $s) . "',//count: " . count($s) . "\n";
-            $globals[$raceNumber]['win'] = $s;
+        // if(in_array(3, $s) && in_array(5, $s)){
+        $fibo = array_intersect($s,$fibonacci);
+        if(count($fibo) >= 3){
+            $racetext .= "\t\t'win hist(Fav $f)' => '" . implode(", ", $s) . "',//count: " . count($s) . "\n";
+            $racetext .= "\t\t'fibo seq(Fav $f)' => '" . implode(", ", $fibo) . "',//count: " . count($fibo) . "\n";
+            $union = array_values(array_unique(array_merge($union, $s)));
             if(!in_array($f, $shit)) $shit[] = $f;
         }
+        else $globals[$raceNumber]['place'][] = $f;
+    }
+    if(!empty($union)){
+        sort($union);
+        $globals[$raceNumber]['win'] = $union;
     }
     $racetext .= "\t],\n";
     unset($oldFavorites);
     unset($favorites);
     unset($oldAddedFavorites);
     unset($addedFavorites);
+    unset($union);
     $outtext .= $racetext;
 }
 sort($shit);
-$outtext .= "\t//'shit' => '" . implode(", ", $shit) . "',\n"; 
+$outtext .= "\t\t//'shit' => '" . implode(", ", $shit) . "',\n"; 
 $outtext .= "];\n";
 file_put_contents($outFile, $outtext);
 
@@ -95,12 +108,13 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
-    $place = array_intersect($globals[$raceNumber]['favorites'], $shit);
-    if(!empty($place)){
-        $racetext .= "\t\t'wp' => '" . implode(", ", $place) . "',\n"; 
+    $wp = array_intersect($globals[$raceNumber]['favorites'], $shit);
+    if(!empty($wp)){
+        $racetext .= "\t\t'wp' => '" . implode(", ", $wp) . "',\n"; 
     }
     if(isset($globals[$raceNumber]['win'])){
-        $racetext .= "\t\t'win' => '" . implode(", ", $globals[$raceNumber]['win']) . "',\n"; 
+        $racetext .= "\t\t'win' =>   '" . implode(", ", $globals[$raceNumber]['win']) . "',\n"; 
+        $racetext .= "\t\t'place' => '" . implode(", ", $globals[$raceNumber]['place']) . "',\n"; 
     }
     $racetext .= "\t],\n";
     $newtext .= $racetext;
