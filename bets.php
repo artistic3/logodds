@@ -116,6 +116,12 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'win' =>   '" . implode(", ", $globals[$raceNumber]['win']) . "',//count: " . count($globals[$raceNumber]['win']) . "\n"; 
         $racetext .= "\t\t'place' => '" . implode(", ", $globals[$raceNumber]['place']) . "',\n"; 
     }
+    if(!empty($wp) && !empty($globals[$raceNumber]['place'])){
+        $qqpl = array_values(array_unique(array_merge($wp, $globals[$raceNumber]['place'])));
+        if(count($qqpl) >= 3){
+            $racetext .= "\t\t'qqpl' => '" . implode(", ", $qqpl) . "',\n"; 
+        }
+    }
     $racetext .= "\t],\n";
     $newtext .= $racetext;
 }
