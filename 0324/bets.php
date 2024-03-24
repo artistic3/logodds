@@ -68,6 +68,7 @@ return [
 		Race 9
 		*/
 		'favorites' => '11, 1, 2',
+		'additional favorites' => '4',
 		'win hist(Fav 1)' => '1, 5, 6, 7, 8, 10, 12',//count: 7
 		'fibo seq(Fav 1)' => '1, 5, 8',
 		'win hist(Fav 2)' => '2, 3, 4, 5, 6, 11',//count: 6
