@@ -108,22 +108,19 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
-
     $wp = array_intersect($globals[$raceNumber]['favorites'], $shit);
-    $racetext .= "\t\t'wp' => '" . implode(", ", $wp) . "',\n";
-    
-    if(isset($globals[$raceNumber]['win'])){
-        if(count($globals[$raceNumber]['win']) <= 8)
-        $racetext .= "\t\t'win' => '" . implode(", ", $globals[$raceNumber]['win']) . "',//count: " . count($globals[$raceNumber]['win']) . "\n"; 
+    if(!empty($wp)){
+        $racetext .= "\t\t'wp' => '" . implode(", ", $wp) . "',\n"; 
     }
-
-    if(isset($globals[$raceNumber]['place']) && !empty($globals[$raceNumber]['place'])){
-        if(!empty($wp)){ 
-            $qqpl = array_values(array_unique(array_merge($wp, $globals[$raceNumber]['place'])));
-            if(count($qqpl) >= 2){
-                sort($qqpl);
-                $racetext .= "\t\t'qqpl' => '" . implode(", ", $qqpl) . "',\n"; 
-            }
+    if(isset($globals[$raceNumber]['win'])){
+        $racetext .= "\t\t'win' =>   '" . implode(", ", $globals[$raceNumber]['win']) . "',//count: " . count($globals[$raceNumber]['win']) . "\n"; 
+        $racetext .= "\t\t'place' => '" . implode(", ", $globals[$raceNumber]['place']) . "',\n"; 
+    }
+    if(!empty($wp) && !empty($globals[$raceNumber]['place'])){
+        $qqpl = array_values(array_unique(array_merge($wp, $globals[$raceNumber]['place'])));
+        if(count($qqpl) >= 2){
+            sort($qqpl);
+            $racetext .= "\t\t'qqpl' => '" . implode(", ", $qqpl) . "',\n"; 
         }
     }
     $racetext .= "\t],\n";
@@ -131,4 +128,3 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
 }
 $newtext .= "];\n";
 file_put_contents($newFile, $newtext);
-
