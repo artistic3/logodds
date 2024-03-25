@@ -22,7 +22,7 @@ return [
 		Race 3
 		*/
 		'favorites' => '6',
-		'win hist(Fav 6)' => '1, 3, 4, 5, 12',//count: 5
+		'win hist(Fav 6)' => '1, 3, 4, 5, 6, 12',//count: 6
 		'fibo seq(Fav 6)' => '1, 3, 5',
 	],
 	'4' => [
@@ -36,6 +36,8 @@ return [
 		Race 5
 		*/
 		'favorites' => '1, 2, 10',
+		'win hist(Fav 1)' => '1, 2, 3, 4, 7, 10',//count: 6
+		'fibo seq(Fav 1)' => '1, 2, 3',
 		'win hist(Fav 2)' => '1, 2, 7, 8, 9',//count: 5
 		'fibo seq(Fav 2)' => '1, 2, 8',
 		'win hist(Fav 10)' => '1, 2, 3, 4, 11',//count: 5
@@ -69,18 +71,20 @@ return [
 		*/
 		'favorites' => '11, 1, 2',
 		'additional favorites' => '4',
+		'win hist(Fav 11)' => '1, 3, 5, 9, 12',//count: 5
+		'fibo seq(Fav 11)' => '1, 3, 5',
 		'win hist(Fav 1)' => '1, 5, 6, 7, 8, 10, 12',//count: 7
 		'fibo seq(Fav 1)' => '1, 5, 8',
-		'win hist(Fav 2)' => '2, 3, 4, 5, 6, 11',//count: 6
-		'fibo seq(Fav 2)' => '2, 3, 5',
+		'win hist(Fav 2)' => '1, 2, 3, 4, 5, 6, 11',//count: 7
+		'fibo seq(Fav 2)' => '1, 2, 3, 5',
 	],
 	'10' => [
 		/**
 		Race 10
 		*/
 		'favorites' => '2, 8',
-		'win hist(Fav 2)' => '2, 3, 13',//count: 3
-		'fibo seq(Fav 2)' => '2, 3, 13',
+		'win hist(Fav 2)' => '2, 3, 8, 13',//count: 4
+		'fibo seq(Fav 2)' => '2, 3, 8, 13',
 	],
-		//'shit' => '1, 2, 5, 6, 10',
+		//'shit' => '1, 2, 5, 6, 10, 11',
 ];
