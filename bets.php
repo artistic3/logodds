@@ -121,6 +121,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(count($qqpl) >= 2){
             sort($qqpl);
             $racetext .= "\t\t'qqpl' => '" . implode(", ", $qqpl) . "',\n"; 
+            if(in_array(2, $qqpl)){
+                $racetext .= "\t\t'SURE WIN' => '" . implode(", ", $qqpl) . "',\n"; 
+            }
         }
     }
     $racetext .= "\t],\n";
