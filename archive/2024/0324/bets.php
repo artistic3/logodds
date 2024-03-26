@@ -71,12 +71,12 @@ return [
 		*/
 		'favorites' => '11, 1, 2',
 		'additional favorites' => '4',
-		'win hist(Fav 11)' => '1, 3, 5, 9, 12',//count: 5
-		'fibo seq(Fav 11)' => '1, 3, 5',
 		'win hist(Fav 1)' => '1, 5, 6, 7, 8, 10, 12',//count: 7
 		'fibo seq(Fav 1)' => '1, 5, 8',
 		'win hist(Fav 2)' => '1, 2, 3, 4, 5, 6, 11',//count: 7
 		'fibo seq(Fav 2)' => '1, 2, 3, 5',
+		'win hist(Fav 11)' => '1, 3, 5, 9, 12',//count: 5
+		'fibo seq(Fav 11)' => '1, 3, 5',
 	],
 	'10' => [
 		/**
