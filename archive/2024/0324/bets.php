@@ -67,6 +67,7 @@ return [
 		Race 8
 		*/
 		'favorites' => '2, 6',
+		'SURE WIN' => '2, 6',
 	],
 	'9' => [
 		/**

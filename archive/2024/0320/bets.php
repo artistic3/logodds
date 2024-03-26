@@ -32,7 +32,6 @@ return [
 		'fibo seq(Fav 3)' => '1, 3, 8',
 		'win hist(Fav 8)' => '1, 2, 3, 8, 10, 11, 12',//count: 7
 		'fibo seq(Fav 8)' => '1, 2, 3, 8',
-		'SURE WIN' => '3, 8, 10',
 	],
 	'4' => [
 		/**
@@ -84,7 +83,6 @@ return [
 		'fibo seq(Fav 10)' => '1, 3, 5',
 		'win hist(Fav 11)' => '1, 3, 5, 9, 12',//count: 5
 		'fibo seq(Fav 11)' => '1, 3, 5',
-		'SURE WIN' => '3, 5, 7, 10, 11',
 	],
 		//'shit' => '2, 3, 4, 5, 6, 8, 10, 11',
 ];
