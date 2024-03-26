@@ -37,7 +37,9 @@ return [
 		/**
 		Race 6
 		*/
-		'favorites' => '5',
+		'favorites' => '5, 3',
+		'win hist(Fav 3)' => '1, 2, 3, 5, 7, 9, 11',//count: 7
+		'fibo seq(Fav 3)' => '1, 2, 3, 5',
 	],
 	'7' => [
 		/**
@@ -59,5 +61,5 @@ return [
 		'win hist(Fav 11)' => '1, 3, 5, 9, 12',//count: 5
 		'fibo seq(Fav 11)' => '1, 3, 5',
 	],
-		//'shit' => '8, 11',
+		//'shit' => '3, 8, 11',
 ];
