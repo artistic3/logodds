@@ -87,7 +87,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         sort($union);
         $globals[$raceNumber]['win'] = $union;
     }
-    if(in_array(2, $favorites){
+    if(in_array(2, $favorites)){
         $racetext .= "\t\t'SURE WIN' => '" . implode(", ", $favorites) . "',\n"; 
     }
     $racetext .= "\t],\n";
