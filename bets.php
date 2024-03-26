@@ -64,12 +64,17 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         } 
     }
     $union = [];
+    $firstSet = true;
     foreach($sets as $f => $s){
-        // if(in_array(3, $s) && in_array(5, $s)){
         $fibo = array_intersect($s,$fibonacci);
         if(count($fibo) >= 3){
             $racetext .= "\t\t'win hist(Fav $f)' => '" . implode(", ", $s) . "',//count: " . count($s) . "\n";
             $union = array_values(array_unique(array_merge($union, $s)));
+            if($firstSet){
+                $firstSet = false;
+                $inter = $s;
+            }
+            else $inter = array_intersect($inter, $s);
         }
     }
     if(!empty($union)){
@@ -77,6 +82,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(count($union) < 9){
             $racetext .= "\t\t'win' =>   '" . implode(", ", $union) . "',//count: " . count($union) . "\n"; 
         }
+        $racetext .= "\t\t'inter' =>   '" . implode(", ", $inter) . "',\n"; 
         if(in_array(2, $favorites)){
              $racetext .= "\t\t'SURE WIN' => '" . implode(", ", $favorites) . "',\n"; 
         }
@@ -87,6 +93,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     unset($oldAddedFavorites);
     unset($addedFavorites);
     unset($union);
+    unset($inter);
     $outtext .= $racetext;
 }
 $outtext .= "];\n";
