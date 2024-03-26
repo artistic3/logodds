@@ -62,6 +62,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $racetext .= "\t\t'additional favorites' => '" . implode(", ", $addedFavorites) . "',\n"; 
     }
     $favorites = array_merge($favorites, $addedFavorites);
+    sort($favorites);
     $globals[$raceNumber]['favorites'] = $favorites;
     foreach($favorites as $one){
         if(isset($history[$raceNumber][$one]['win'])){
@@ -120,7 +121,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qqpl = array_values(array_unique(array_merge($wp, $globals[$raceNumber]['place'])));
         if(count($qqpl) >= 2){
             sort($qqpl);
-            $racetext .= "\t\t'qqpl' => '" . implode(", ", $globals[$raceNumber]['favorites']) . "',\n"; 
+            $racetext .= "\t\t'qqpl' => '" . implode(", ", $qqpl) . "',\n"; 
             if(in_array(2, $qqpl)){
                 $racetext .= "\t\t'SURE WIN' => '" . implode(", ", $qqpl) . "',\n"; 
             }
