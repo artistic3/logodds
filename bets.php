@@ -87,6 +87,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         sort($union);
         $globals[$raceNumber]['win'] = $union;
     }
+    if(count(array_intersect($favorites, $fibonacci)) >= 2){
+        $racetext .= "\t\t'SURE WIN' => '" . implode(", ", $favorites) . "',\n"; 
+    }
     $racetext .= "\t],\n";
     unset($oldFavorites);
     unset($favorites);
