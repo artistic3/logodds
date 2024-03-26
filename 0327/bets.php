@@ -23,7 +23,7 @@ return [
 		/**
 		Race 4
 		*/
-		'favorites' => '8',
+		'favorites' => '8, 11',
 		'win hist(Fav 8)' => '1, 3, 8, 11',//count: 4
 		'fibo seq(Fav 8)' => '1, 3, 8',
 	],
@@ -55,7 +55,7 @@ return [
 		/**
 		Race 9
 		*/
-		'favorites' => '11',
+		'favorites' => '11, 4',
 		'win hist(Fav 11)' => '1, 3, 5, 9, 12',//count: 5
 		'fibo seq(Fav 11)' => '1, 3, 5',
 	],
