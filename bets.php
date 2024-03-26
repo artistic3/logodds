@@ -120,7 +120,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $qqpl = array_values(array_unique(array_merge($wp, $globals[$raceNumber]['place'])));
         if(count($qqpl) >= 2){
             sort($qqpl);
-            $racetext .= "\t\t'qqpl' => '" . implode(", ", $qqpl) . "',\n"; 
+            $racetext .= "\t\t'qqpl' => '" . implode(", ", $globals[$raceNumber]['favorites']) . "',\n"; 
             if(in_array(2, $qqpl)){
                 $racetext .= "\t\t'SURE WIN' => '" . implode(", ", $qqpl) . "',\n"; 
             }
