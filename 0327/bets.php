@@ -26,6 +26,7 @@ return [
 		'favorites' => '8, 11',
 		'win hist(Fav 8)' => '1, 3, 8, 11',//count: 4
 		'win' =>   '1, 3, 8, 11',//count: 4
+		'inter' =>   '1, 3, 8, 11',
 	],
 	'5' => [
 		/**
@@ -40,6 +41,7 @@ return [
 		'favorites' => '5, 3',
 		'win hist(Fav 3)' => '1, 2, 3, 5, 7, 9, 11',//count: 7
 		'win' =>   '1, 2, 3, 5, 7, 9, 11',//count: 7
+		'inter' =>   '1, 2, 3, 5, 7, 9, 11',
 	],
 	'7' => [
 		/**
@@ -60,5 +62,6 @@ return [
 		'favorites' => '11, 4',
 		'win hist(Fav 11)' => '1, 3, 5, 9, 12',//count: 5
 		'win' =>   '1, 3, 5, 9, 12',//count: 5
+		'inter' =>   '1, 3, 5, 9, 12',
 	],
 ];
