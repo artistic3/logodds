@@ -74,7 +74,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     if(!empty($union)){
         sort($union);
-        $racetext .= "\t\t'win' =>   '" . implode(", ", $union) . "',//count: " . count($union) . "\n"; 
+        if(count($union) < 9)){
+            $racetext .= "\t\t'win' =>   '" . implode(", ", $union) . "',//count: " . count($union) . "\n"; 
+        }
         if(in_array(2, $favorites)){
              $racetext .= "\t\t'SURE WIN' => '" . implode(", ", $favorites) . "',\n"; 
         }
