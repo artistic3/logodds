@@ -82,9 +82,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(count($union) < 9){
             $racetext .= "\t\t'win' =>   '" . implode(", ", $union) . "',//count: " . count($union) . "\n"; 
         }
-        $racetext .= "\t\t'inter' =>   '" . implode(", ", $inter) . "',\n"; 
+        else $racetext .= "\t\t'inter' =>   '" . implode(", ", $inter) . "',\n"; 
         if(in_array(2, $favorites)){
-             $racetext .= "\t\t'SURE WIN' => '" . implode(", ", $favorites) . "',\n"; 
+             $racetext .= "\t\t'SURE WIN(&qin)' => '" . implode(", ", $favorites) . "',\n"; 
         }
     }
     $racetext .= "\t],\n";
