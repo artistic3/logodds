@@ -30,7 +30,7 @@ return [
 		Race 4
 		*/
 		'favorites' => '8, 11, 2',
-		'win hist(Fav 2)' => '2, 3, 5, 7, 9, 10, 12',//count: 7
+		'win hist(Fav 2)' => '2, 3, 5, 7, 9, 10, 11, 12',//count: 8
 		'win hist(Fav 8)' => '1, 3, 8, 11',//count: 4
 		'SURE WIN(&qin)' => '2, 8, 11',
 	],
