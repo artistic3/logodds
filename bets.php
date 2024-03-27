@@ -67,7 +67,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $firstSet = true;
     foreach($sets as $f => $s){
         $fibo = array_intersect($s,$fibonacci);
-        if(count($fibo) >= 3){
+        if(count($fibo) >= 2){
             $racetext .= "\t\t'win hist(Fav $f)' => '" . implode(", ", $s) . "',//count: " . count($s) . "\n";
             $union = array_values(array_unique(array_merge($union, $s)));
             if($firstSet){

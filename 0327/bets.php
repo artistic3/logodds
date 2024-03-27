@@ -6,6 +6,8 @@ return [
 		Race 1
 		*/
 		'favorites' => '6, 11',
+		'win hist(Fav 6)' => '1, 2, 4, 6, 7, 9, 11',//count: 7
+		'win' =>   '1, 2, 4, 6, 7, 9, 11',//count: 7
 	],
 	'2' => [
 		/**
@@ -19,7 +21,8 @@ return [
 		*/
 		'favorites' => '7, 1',
 		'win hist(Fav 1)' => '1, 2, 4, 5, 8, 9, 10, 11',//count: 8
-		'win' =>   '1, 2, 4, 5, 8, 9, 10, 11',//count: 8
+		'win hist(Fav 7)' => '3, 5, 6, 7, 11, 12',//count: 6
+		'inter' =>   '5, 11',
 	],
 	'4' => [
 		/**
@@ -37,6 +40,7 @@ return [
 		*/
 		'favorites' => '3, 1',
 		'win hist(Fav 1)' => '1, 2, 3, 4, 7, 10, 12',//count: 7
+		'win hist(Fav 3)' => '1, 3, 4, 7, 10, 12',//count: 6
 		'win' =>   '1, 2, 3, 4, 7, 10, 12',//count: 7
 	],
 	'6' => [
@@ -58,6 +62,9 @@ return [
 		Race 8
 		*/
 		'favorites' => '1, 10, 12',
+		'win hist(Fav 1)' => '1, 5, 6, 7, 11',//count: 5
+		'win hist(Fav 10)' => '2, 3, 4, 7, 9, 10',//count: 6
+		'inter' =>   '7',
 	],
 	'9' => [
 		/**
