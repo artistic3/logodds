@@ -23,7 +23,7 @@ return [
 		*/
 		'favorites' => '7, 1',
 		'win hist(Fav 1)' => '1, 2, 4, 8, 9, 10, 11',//count: 7
-		'win' =>   '1, 2, 4, 8, 9, 10, 11',//count: 7
+		'win hist(Fav 7)' => '1, 3, 6, 7, 11, 12',//count: 6
 	],
 	'4' => [
 		/**
