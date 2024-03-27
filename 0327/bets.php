@@ -39,9 +39,9 @@ return [
 		Race 5
 		*/
 		'favorites' => '3, 1, 4',
-		'win hist(Fav 1)' => '1, 2, 3, 4, 7, 10, 12',//count: 7
-		'win hist(Fav 4)' => '1, 2, 3, 4, 6, 7',//count: 6
-		'win' =>   '1, 2, 3, 4, 6, 7, 10, 12',//count: 8
+		'win hist(Fav 1)' => '1, 2, 3, 4, 5, 7, 10, 12',//count: 8
+		'win hist(Fav 3)' => '1, 3, 4, 5, 7, 10, 12',//count: 7
+		'win hist(Fav 4)' => '1, 2, 3, 4, 5, 6, 7',//count: 7
 	],
 	'6' => [
 		/**
