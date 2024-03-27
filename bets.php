@@ -57,24 +57,15 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     }
     $favorites = array_merge($favorites, $addedFavorites);
     sort($favorites);
-    foreach($favorites as $one){
-        if(isset($history[$raceNumber][$one]['win'])){
-            $winners = array_intersect($history[$raceNumber][$one]['win'], $runners);
-            $sets[$one] = $winners;
-        } 
-    }
     $union = [];
-    $firstSet = true;
-    foreach($sets as $f => $s){
-        $fibo = array_intersect($s,$fibonacci);
-        if(count($fibo) >= 2){
-            $racetext .= "\t\t'win hist(Fav $f)' => '" . implode(", ", $s) . "',//count: " . count($s) . "\n";
-            $union = array_values(array_unique(array_merge($union, $s)));
-            if($firstSet){
-                $firstSet = false;
-                $inter = $s;
-            }
-            else $inter = array_intersect($inter, $s);
+    foreach($favorites as $one){
+        if(!isset($history[$raceNumber][$one]['win'])) continue;
+        $winners = $history[$raceNumber][$one]['win'];
+        $fibo = array_intersect($winners,$fibonacci);
+        if(count($fibo) >= 3){
+            $selected = array_intersect($winners, $runners);
+            $racetext .= "\t\t'win hist(Fav $one)' => '" . implode(", ", $selected) . "',//count: " . count($selected) . "\n";
+            $union = array_values(array_unique(array_merge($union, $selected)));
         }
     }
     if(!empty($union)){
@@ -82,9 +73,8 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         if(count($union) < 9){
             $racetext .= "\t\t'win' =>   '" . implode(", ", $union) . "',//count: " . count($union) . "\n"; 
         }
-        else $racetext .= "\t\t'inter' =>   '" . implode(", ", $inter) . "',\n"; 
         if(in_array(2, $favorites)){
-             $racetext .= "\t\t'SURE WIN(&qin)' => '" . implode(", ", $favorites) . "',\n"; 
+            $racetext .= "\t\t'SURE WIN(&qin)' => '" . implode(", ", $favorites) . "',\n"; 
         }
     }
     $racetext .= "\t],\n";
@@ -93,7 +83,6 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     unset($oldAddedFavorites);
     unset($addedFavorites);
     unset($union);
-    unset($inter);
     $outtext .= $racetext;
 }
 $outtext .= "];\n";
