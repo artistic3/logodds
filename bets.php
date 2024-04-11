@@ -2,14 +2,13 @@
 
 if(!isset($argv[1])) die("Race Date Not Entered!!\n");
 
-$fibonacci = [1, 2, 3, 5, 8, 13, 21];
-
 $step = "bets";
 $raceDate = trim($argv[1]);
 $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $allRacesOdds = include($currentDir . DIRECTORY_SEPARATOR . "odds.php");
 $history = include(__DIR__ . DIRECTORY_SEPARATOR . "winhistory.php");
+$matrix = include(__DIR__ . DIRECTORY_SEPARATOR . "matrix.php");
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "$step.php";
 
 if(file_exists($outFile)){
@@ -20,69 +19,49 @@ $totalRaces = count($allRacesOdds);
 
 $outtext = "<?php\n\n";
 $outtext .= "return [\n";
-
 for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     if(!isset($allRacesOdds[$raceNumber])) continue;
     if(isset($oldData)){
         if(isset($oldData[$raceNumber]['favorites'])) $oldFavorites = explode(", ", $oldData[$raceNumber]['favorites']);
-        if(isset($oldData[$raceNumber]['additional favorites'])) $oldAddedFavorites = explode(", ", $oldData[$raceNumber]['additional favorites']);
+        if(isset($oldData[$raceNumber]['official win'])) $officialWin = explode(", ", $oldData[$raceNumber]['official win']);
     }
     if(isset($oldFavorites)) $favorites = $oldFavorites;
     else $favorites = [];
-
-    if(isset($oldAddedFavorites)) $addedFavorites = $oldAddedFavorites;
-    else $addedFavorites = [];
-
-    $sets = [];
-
     $winsArray = $allRacesOdds[$raceNumber];
     asort($winsArray);
     $runners = array_keys($winsArray);
     $favorite = $runners[0];
-    if(count($favorites) < 3){
-        if(!in_array($favorite, $favorites)) $favorites[] = $favorite;
-    }
-    else{
-        if(!in_array($favorite, $addedFavorites) && !in_array($favorite, $favorites)) $addedFavorites[] = $favorite;
-    }
+    if(!in_array($favorite, $favorites)) $favorites[] = $favorite;
     sort($runners);
+    sort($favorites);
     $racetext = "";
     $racetext .= "\t'$raceNumber' => [\n";
     $racetext .= "\t\t/**\n";
     $racetext .= "\t\tRace $raceNumber\n";
     $racetext .= "\t\t*/\n";
     $racetext .= "\t\t'favorites' => '" . implode(", ", $favorites) . "',\n"; 
-    if(!empty($addedFavorites))  {
-        $racetext .= "\t\t'additional favorites' => '" . implode(", ", $addedFavorites) . "',\n"; 
+   
+    if(!empty($officialWin))  {
+        $racetext .= "\t\t'official win' => '" . implode(", ", $officialWin) . "',\n"; 
     }
-    $favorites = array_merge($favorites, $addedFavorites);
-    sort($favorites);
+   
     $union = [];
-    foreach($favorites as $one){
-        if(!isset($history[$raceNumber][$one]['win'])) continue;
-        $winners = $history[$raceNumber][$one]['win'];
-        $fibo = array_intersect($winners,$fibonacci);
-        if(count($fibo) >= 3){
-            $selected = array_intersect($winners, $runners);
-            $racetext .= "\t\t'win hist(Fav $one)' => '" . implode(", ", $selected) . "',//count: " . count($selected) . "\n";
-            $union = array_values(array_unique(array_merge($union, $selected)));
-        }
+    foreach($favorites as $F){
+        $win = array_intersect($history[$raceNumber][$F]['win'], $runners);
+        $union = array_values(array_unique(array_merge($union, $win)));
     }
-    if(!empty($union)){
-        sort($union);
-        if(count($union) < 9){
-            $racetext .= "\t\t'win' =>   '" . implode(", ", $union) . "',//count: " . count($union) . "\n"; 
-        }
-        if(in_array(2, $favorites)){
-            $racetext .= "\t\t'SURE WIN(&qin)' => '" . implode(", ", $favorites) . "',\n"; 
+    sort($union);
+    $racetext .= "\t\t'win hist' => '" . implode(", ", $union) . "',//count: " . count($union) . "\n"; 
+    foreach($union as $candidate){
+        foreach($favorites as $X){
+            if(isset($matrix[$raceNumber][$X][$candidate]) && $matrix[$raceNumber][$X][$candidate] === true){
+                $racetext .= "\t\t'place' => '" . $candidate . "',\n"; 
+            }
         }
     }
     $racetext .= "\t],\n";
     unset($oldFavorites);
     unset($favorites);
-    unset($oldAddedFavorites);
-    unset($addedFavorites);
-    unset($union);
     $outtext .= $racetext;
 }
 $outtext .= "];\n";
