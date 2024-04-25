@@ -8,7 +8,6 @@ $currentDir = __DIR__ . DIRECTORY_SEPARATOR . $raceDate;
 
 $allRacesOdds = include($currentDir . DIRECTORY_SEPARATOR . "odds.php");
 $history = include(__DIR__ . DIRECTORY_SEPARATOR . "winhistory.php");
-$matrix = include(__DIR__ . DIRECTORY_SEPARATOR . "matrix.php");
 $outFile = $currentDir . DIRECTORY_SEPARATOR . "$step.php";
 
 if(file_exists($outFile)){
@@ -41,22 +40,23 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
     $racetext .= "\t\t*/\n";
     $racetext .= "\t\t'favorites' => '" . implode(", ", $favorites) . "',\n"; 
    
-    if(!empty($officialWin))  {
+    if(isset($officialWin)){
         $racetext .= "\t\t'official win' => '" . implode(", ", $officialWin) . "',\n"; 
     }
-   
-    $union = [];
+    $firstSet = true;
     foreach($favorites as $F){
-        $win = array_intersect($history[$raceNumber][$F]['win'], $runners);
-        $union = array_values(array_unique(array_merge($union, $win)));
+        $candidates = array_intersect($history[$raceNumber][$F]["win"], $runners);
+        if($firstSet) {
+            $inter = $candidates;
+            $firstSet = false;
+        }
+        else $inter = array_intersect($inter, $candidates);
     }
-    sort($union);
-    $racetext .= "\t\t'win hist' => '" . implode(", ", $union) . "',//count: " . count($union) . "\n"; 
-    foreach($union as $candidate){
-        foreach($favorites as $X){
-            if(isset($matrix[$raceNumber][$X][$candidate]) && $matrix[$raceNumber][$X][$candidate] === true){
-                $racetext .= "\t\t'place' => '" . $candidate . "',\n"; 
-            }
+    $inter = array_intersect($favorites, $inter);
+    if(!empty($inter)) {
+        $racetext .= "\t\t'inter' => '" . implode(", ", $inter) . "',\n"; 
+        if(count($inter) >= 2 && count($favorites) >= 3){
+            $racetext .= "\t\t'win/qin/trio' => '" . implode(", ", $favorites) . "',\n"; 
         }
     }
     $racetext .= "\t],\n";
