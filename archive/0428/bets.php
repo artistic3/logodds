@@ -20,13 +20,14 @@ return [
 		Race 3
 		*/
 		'favorites' => '1, 3',
-		'inter' => '1',
+		'inter' => '1, 3',
 	],
 	'4' => [
 		/**
 		Race 4
 		*/
 		'favorites' => '1, 4, 5',
+		'inter' => '1',
 	],
 	'5' => [
 		/**
@@ -56,6 +57,7 @@ return [
 		Race 8
 		*/
 		'favorites' => '1, 8, 11',
+		'inter' => '1',
 	],
 	'9' => [
 		/**
@@ -68,5 +70,6 @@ return [
 		Race 10
 		*/
 		'favorites' => '2, 7, 8, 13',
+		'inter' => '13',
 	],
 ];
