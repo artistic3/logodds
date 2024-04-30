@@ -14,6 +14,10 @@ return [
 		*/
 		'favorites' => '3, 12',
 		'inter' => '12',
+		'potential inter(potential fav 2)' => '6, 12',
+		'potential inter(potential fav 4)' => '10, 12',
+		'potential inter(potential fav 5)' => '10, 12',
+		'potential inter(potential fav 6)' => '6, 10',
 	],
 	'3' => [
 		/**

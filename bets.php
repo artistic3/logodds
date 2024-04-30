@@ -52,6 +52,7 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         }
         else $inter = array_intersect($inter, $candidates);
     }
+    $copyInter = $inter;
     $inter = array_intersect($favorites, $inter);
     if(!empty($inter)) {
         $racetext .= "\t\t'inter' => '" . implode(", ", $inter) . "',\n"; 
@@ -59,6 +60,16 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
             $racetext .= "\t\t'win($20)' => '" . implode(", ", $favorites) . "',\n"; 
             $racetext .= "\t\t'win($20)' => '" . implode(", ", array_slice($favorites, 1, 2)) . "',\n"; 
             $racetext .= "\t\t'qin/trio($10)' => '" . implode(", ", $favorites) . "',\n"; 
+        }
+    }
+    if(count($inter) < 2 && count($favorites) === 2){
+        $potentialFavorites = array_diff($runners, $favorites);
+        foreach($potentialFavorites as $potentialFavorite){
+            $potentialCandidates = array_intersect($history[$raceNumber][$potentialFavorite]["win"], $runners);
+            $potentialInter = array_intersect($copyInter, $potentialCandidates);
+            if(count($potentialInter) >= 2){
+                $racetext .= "\t\t'potential inter(potential fav $potentialFavorite)' => '" . implode(", ", $potentialInter) . "',\n"; 
+            }
         }
     }
     $racetext .= "\t],\n";
