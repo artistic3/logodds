@@ -5,13 +5,11 @@ return [
 		/**
 		Race 1
 		*/
-		'favorites' => '3, 4',
-		'inter' => '4',
-		'potential inter(fav 1)' => '1, 4, 5, 10',
-		'potential inter(fav 2)' => '1, 2, 5',
-		'potential inter(fav 5)' => '1, 2, 5',
-		'potential inter(fav 10)' => '1, 4, 5, 10',
-		'union' => '1, 2, 4, 5, 10',
+		'favorites' => '1, 3, 4',
+		'inter' => '1, 4',
+		'win($20)' => '1, 3, 4',
+		'win($20)' => '3, 4',
+		'qin/trio($10)' => '1, 3, 4',
 	],
 	'2' => [
 		/**
