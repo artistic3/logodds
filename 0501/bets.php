@@ -30,12 +30,8 @@ return [
 		*/
 		'favorites' => '3, 11',
 		'inter' => '11',
-		'potential inter(fav 1)' => '5, 6, 11',
-		'potential inter(fav 2)' => '5, 11',
 		'potential inter(fav 5)' => '5, 6',
 		'potential inter(fav 6)' => '5, 6, 11',
-		'potential inter(fav 9)' => '6, 11',
-		'potential inter(fav 12)' => '6, 11',
 	],
 	'5' => [
 		/**
@@ -44,13 +40,8 @@ return [
 		'favorites' => '3, 6',
 		'inter' => '3',
 		'potential inter(fav 1)' => '1, 3, 4, 7',
-		'potential inter(fav 2)' => '1, 7, 11',
 		'potential inter(fav 4)' => '1, 3, 4, 7',
-		'potential inter(fav 5)' => '1, 3, 4',
 		'potential inter(fav 7)' => '1, 3, 4, 7',
-		'potential inter(fav 8)' => '1, 4, 7, 11',
-		'potential inter(fav 9)' => '1, 4',
-		'potential inter(fav 10)' => '1, 3, 4, 11',
 	],
 	'6' => [
 		/**
@@ -79,12 +70,7 @@ return [
 		*/
 		'favorites' => '1, 7',
 		'inter' => '7',
-		'potential inter(fav 2)' => '5, 6',
-		'potential inter(fav 3)' => '5, 9',
-		'potential inter(fav 4)' => '5, 6, 7, 9',
 		'potential inter(fav 5)' => '5, 7',
 		'potential inter(fav 6)' => '5, 6, 7',
-		'potential inter(fav 10)' => '5, 6',
-		'potential inter(fav 11)' => '5, 9',
 	],
 ];
