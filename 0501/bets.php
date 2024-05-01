@@ -56,7 +56,7 @@ return [
 		/**
 		Race 7
 		*/
-		'favorites' => '3, 6',
+		'favorites' => '3, 6, 11',
 		'inter' => '6',
 	],
 	'8' => [
