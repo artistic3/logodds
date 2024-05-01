@@ -35,7 +35,7 @@ return [
 		/**
 		Race 5
 		*/
-		'favorites' => '3, 4, 6',
+		'favorites' => '3, 6',
 		'inter' => '3, 4',
 		'win($20)' => '3, 4, 6',
 		'win($20)' => '4, 6',
