@@ -67,7 +67,9 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         foreach($potentialFavorites as $potentialFavorite){
             $potentialCandidates = array_intersect($history[$raceNumber][$potentialFavorite]["win"], $runners);
             $potentialInter = array_intersect($copyInter, $potentialCandidates);
-            if(count($potentialInter) >= 2 && in_array($potentialFavorite, $potentialInter)){
+            $newFavs = array_merge($favorites, [$potentialFavorite]);
+            $potentialInter = array_intersect($potentialInter, $potentialFavs);
+            if(count($potentialInter) >= 2){
                 $racetext .= "\t\t'potential inter(fav $potentialFavorite)' => '" . implode(", ", $potentialInter) . "',\n"; 
             }
         }
