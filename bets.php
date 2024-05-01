@@ -66,15 +66,21 @@ for ($raceNumber = 1; $raceNumber <= $totalRaces; $raceNumber++) {
         $potentialFavorites = array_diff($runners, $favorites);
         $countPotential = 0;
         $additionalText = "";
+        $union = [];
         foreach($potentialFavorites as $potentialFavorite){
             $potentialCandidates = array_intersect($history[$raceNumber][$potentialFavorite]["win"], $runners);
             $potentialInter = array_intersect($copyInter, $potentialCandidates);
             if(count($potentialInter) >= 2 && in_array($potentialFavorite, $potentialInter)){
                 $additionalText .= "\t\t'potential inter(fav $potentialFavorite)' => '" . implode(", ", $potentialInter) . "',\n"; 
+                $union = array_values(array_unique(array_merge($union, $potentialInter)));
                 $countPotential ++;
             }
         }
-        if($countPotential >= 3) $racetext .= $additionalText;
+        if($countPotential >= 3) {
+            $racetext .= $additionalText;
+            sort($union);
+            if(!empty($union)) $racetext .= "\t\t'union' => '" . implode(", ", $union) . "',\n"; 
+        }
     }
     $racetext .= "\t],\n";
     unset($oldFavorites);
