@@ -22,7 +22,7 @@ exec("git config --global advice.detachedHead false");
 foreach($history as $version){
     exec("git show --no-patch --format=%ci $version; ls",$year);
     $year = substr($year[0], 0, 4);
-    // if($year < 2023) continue;
+    if($year < 2022) continue;
     exec("git checkout $version; ls",$command_output);
     foreach($command_output as $raceDate){
         if(is_dir($raceDate) && preg_match("/^[0-9]+$/", $raceDate)) {
