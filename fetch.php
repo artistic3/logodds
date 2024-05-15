@@ -42,23 +42,7 @@ foreach($history as $version){
                 foreach($odds as $raceNumber => $raceOdds){
                     asort($raceOdds);
                     $runners = array_keys($raceOdds);
-                    if(!isset($runners[0])) {
-                        /**
-                         * This older format for the odds was used:
-                         * $raceNumber  => [
-                         * $runner => [
-                         *  		'WIN' => 5.3, //win odds
-                         *  		'PLA' => 2.5  //place odds
-                         * ],
-                         * .... ],
-                         **/
-                        $plaOdds = [];
-                        foreach($runners as $runner){
-                            $plaOdds[$runner] = $raceOdds[$runner]['PLA'];
-                        }
-                        asort($plaOdds);
-                        $runners = array_keys($plaOdds);
-                    }
+                    if(!isset($runners[0])) continue;
                     $favorite = $runners[0];
                     if(!isset($matrix["$year$raceDate"][$raceNumber])) $matrix["$year$raceDate"][$raceNumber] = [$favorite];
                     else{
