@@ -26,6 +26,7 @@ foreach($history as $version){
     exec("git checkout $version; ls",$command_output);
     foreach($command_output as $raceDate){
         if(is_dir($raceDate) && preg_match("/^[0-9]+$/", $raceDate)) {
+            if($raceDate == "20221204") continue;
             if(!isset($matrix["$year$raceDate"])) $matrix["$year$raceDate"] = [];
             $oddsFile1 = $raceDate . DIRECTORY_SEPARATOR . "odds.php";
             $oddsFile2 = $raceDate . DIRECTORY_SEPARATOR . "plaodds.php";
