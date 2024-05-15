@@ -42,6 +42,7 @@ foreach($history as $version){
                 foreach($odds as $raceNumber => $raceOdds){
                     asort($raceOdds);
                     $runners = array_keys($raceOdds);
+                    if(!isset($runners[0])) continue;
                     $favorite = $runners[0];
                     if(!isset($matrix["$year$raceDate"][$raceNumber])) $matrix["$year$raceDate"][$raceNumber] = [$favorite];
                     else{
