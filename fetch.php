@@ -28,9 +28,13 @@ foreach($history as $version){
         if(is_dir($raceDate) && preg_match("/^[0-9]+$/", $raceDate)) {
             if(!isset($matrix["$year$raceDate"])) $matrix["$year$raceDate"] = [];
             $oddsFile1 = $raceDate . DIRECTORY_SEPARATOR . "odds.php";
-            $oddsFile2 = $raceDate . DIRECTORY_SEPARATOR . "getodds.php";
+            $oddsFile2 = $raceDate . DIRECTORY_SEPARATOR . "plaodds.php";
+            $oddsFile3 = $raceDate . DIRECTORY_SEPARATOR . "winodds.php";
+            $oddsFile4 = $raceDate . DIRECTORY_SEPARATOR . "getodds.php";
             if(file_exists($oddsFile1)) $oddsFile = $oddsFile1;
             elseif(file_exists($oddsFile2)) $oddsFile = $oddsFile2;
+            elseif(file_exists($oddsFile3)) $oddsFile = $oddsFile3;
+            elseif(file_exists($oddsFile4)) $oddsFile = $oddsFile4;
             if(!isset($oddsFile)) continue;
             if(file_exists($oddsFile)){
                 $odds = include($oddsFile);
